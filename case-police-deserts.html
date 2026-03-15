@@ -51,8 +51,8 @@
 
   <div class="case-section">
     <h2>The Problem</h2>
-    <p>Emergency response time is one of the most consequential variables in public safety — yet it is rarely mapped at the neighborhood level. Detroit, a city with a long history of fiscal stress and police department underfunding, provides a critical case study for examining whether response equity exists across its neighborhoods.</p>
-    <p>The central research question: <strong>Do Detroit police response times differ systematically by neighborhood race and income, even after controlling for call volume?</strong> If so, which neighborhoods wait the longest — and how much longer?</p>
+    <p>I chose Detroit for this project because it has a long history of fiscal stress and police department underfunding and I wanted to know whether response times were actually different across neighborhoods or whether that was just perception. The reason I thought this was worth investigating is because response time is one of the most important variables in public safety but you almost never see it mapped at the neighborhood level.</p>
+    <p>The question I was trying to answer was whether Detroit police response times differ systematically by neighborhood race and income even after you control for call volume. And if they do I wanted to find out which neighborhoods actually wait the longest and by how much.</p>
   </div>
 
   <div class="case-section">
@@ -71,13 +71,13 @@
   <div class="case-section">
     <h2>Methodology</h2>
     <h3>1. Data Preparation</h3>
-    <p>911 call records were filtered to Priority 1 (life-threatening) calls to control for call urgency. Response time was calculated as the difference between call receipt and officer arrival. Records with incomplete timestamps or geocoding errors were excluded.</p>
+    <p>The first thing I did was filter the 911 call records to Priority 1 calls only and the reason I did that is because I wanted to control for call urgency so I was only comparing like with like. I calculated response time as the difference between when the call was received and when the officer arrived and I excluded records with incomplete timestamps or geocoding errors.</p>
 
     <h3>2. Spatial Aggregation</h3>
-    <p>Individual calls were spatially joined to Detroit&rsquo;s 139 census tracts using point-in-polygon operations. Median response time was calculated per tract, weighted by call volume, to produce a single representative response time per tract.</p>
+    <p>I then spatially joined the individual calls to Detroit's 139 census tracts using point-in-polygon operations. For each tract I calculated the median response time weighted by call volume and the reason I used median instead of mean is because I did not want a small number of very long waits to skew the results for the whole tract.</p>
 
     <h3>3. Regression Analysis</h3>
-    <p>An Ordinary Least Squares (OLS) regression was fit with tract-level median response time as the dependent variable and the following predictors:</p>
+    <p>I fit an Ordinary Least Squares regression with tract-level median response time as the dependent variable and the reason I chose OLS is because it is interpretable and I could clearly communicate the relationship between each predictor and response time to a non-technical audience. The predictors I used were:</p>
     <table class="data-table">
       <thead><tr><th>Variable</th><th>Type</th><th>Source</th></tr></thead>
       <tbody>
@@ -89,22 +89,22 @@
     </table>
 
     <h3>4. Spatial Visualization</h3>
-    <p>Regression residuals and predicted response times were mapped using Leaflet with a diverging color scale to highlight tracts with the largest deviations from expected response time.</p>
+    <p>I mapped the regression residuals and predicted response times in Leaflet using a diverging color scale and the reason I chose a diverging scale is because I wanted to make it easy to see which tracts were waiting longer than expected versus shorter than expected based on what the model predicted.</p>
   </div>
 
   <div class="case-section">
     <h2>Key Findings</h2>
     <div class="finding-card">
       <h4>Race is a statistically significant predictor (p &lt; 0.05)</h4>
-      <p>A 10-percentage-point increase in non-white tract population was associated with an average of 1.4 additional minutes of response time, holding income and call volume constant.</p>
+      <p>When I looked at the regression output I found that a 10 percentage point increase in non-white tract population was associated with 1.4 additional minutes of response time on average holding income and call volume constant and the reason this finding matters is because it persists even after controlling for the other variables.</p>
     </div>
     <div class="finding-card">
       <h4>Income effect is stronger than race effect</h4>
-      <p>A $10,000 decrease in median household income was associated with 2.1 additional minutes of response time — the largest single predictor in the model after controlling for precinct distance.</p>
+      <p>What surprised me was that the income effect was actually stronger than the race effect. A $10,000 decrease in median household income was associated with 2.1 additional minutes of response time which made it the largest single predictor in the model after I controlled for precinct distance.</p>
     </div>
     <div class="finding-card">
       <h4>Northeast Detroit tracts wait longest</h4>
-      <p>The 15 census tracts with the longest predicted response times (averaging 18+ minutes) are clustered in the northeast corner of the city — areas characterized by high poverty rates, low population density, and greater precinct distance.</p>
+      <p>When I mapped the results I could see that the 15 tracts with the longest predicted response times averaging 18 or more minutes were all clustered in the northeast corner of the city. The reason those tracts score so high is because they have high poverty rates and low population density and they are farther from precinct locations all at the same time.</p>
     </div>
   </div>
 
@@ -125,8 +125,8 @@
 
   <div class="case-section">
     <h2>Limitations &amp; Future Work</h2>
-    <p>This analysis is cross-sectional and cannot establish causation. Longer response times in low-income tracts may reflect patrol allocation decisions, officer deployment patterns, or geographic constraints rather than direct discrimination. A stronger design would include officer deployment data and shift-level controls.</p>
-    <p>Future work would apply spatial lag and spatial error regression models to account for spatial autocorrelation in response times across adjacent tracts, and extend the analysis to other Michigan cities for comparative context.</p>
+    <p>One thing I want to be clear about is that this analysis is cross-sectional which means I cannot prove causation. The longer response times I found in lower-income and higher non-white tracts could reflect patrol allocation decisions or officer deployment patterns or geographic constraints rather than anything intentional and I think it is important to be upfront about that limitation.</p>
+    <p>If I were to continue this project I would apply spatial lag and spatial error regression models to account for the fact that response times in adjacent tracts are probably correlated with each other. I would also want to extend the analysis to other Michigan cities to give the Detroit findings more context and see whether the patterns I found hold elsewhere.</p>
   </div>
 
 </div>
