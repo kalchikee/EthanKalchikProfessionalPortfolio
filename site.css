@@ -301,6 +301,7 @@ nav a.active { color: var(--accent); background: rgba(0,212,170,0.08); }
   transition: border-color 0.2s, color 0.2s;
   cursor: default;
   user-select: none;
+  color: var(--text);
 }
 
 .skill-chip:hover { border-color: var(--accent); color: var(--accent); }
