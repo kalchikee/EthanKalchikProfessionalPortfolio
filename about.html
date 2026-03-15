@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Ethan Kalchik &mdash; GIS analyst and spatial data scientist with M.S. in Cartography from UW-Madison.">
+  <meta property="og:title" content="About &mdash; Ethan Kalchik">
+  <meta property="og:description" content="GIS analyst and spatial data scientist building tools at the intersection of spatial analysis, machine learning, and interactive mapping.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kalchikee.github.io/EthanKalchikProfessionalPortfolio/">
+  <meta property="og:image" content="https://kalchikee.github.io/EthanKalchikProfessionalPortfolio/assets/img/ethan3.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>About — Ethan Kalchik</title>
   <link rel="stylesheet" href="site.css">
   <style>
@@ -143,6 +150,7 @@
 <!-- ── NAV ──────────────────────────────────────────────────────────────── -->
 <nav>
   <a href="index.html" class="nav-logo">EK</a>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="portfolio.html">Visual Portfolio</a></li>
@@ -197,9 +205,9 @@
 
       <div class="bio-block">
         <h3>About Me</h3>
-        <p>I am a passionate GIS professional currently pursuing my Master's degree in Cartography and Geographic Information Sciences at the University of Wisconsin-Madison. With a strong foundation in geographic information systems and two bachelor's degrees from Michigan State University, I bring together technical expertise and creative problem-solving skills in my work.</p>
-        <p>My professional experience spans various aspects of GIS — from creating detailed project plan sets at Bono Consulting to designing complex visualizations at Primera Engineers. I'm particularly interested in the intersection of cartography, data visualization, and web-based mapping technologies.</p>
-        <p>When I'm not working with maps, you can find me exploring new technologies, contributing to open-source GIS projects, or cycling through Chicago's diverse neighborhoods — an experience that has deepened my appreciation for urban geography and spatial analysis.</p>
+        <p>I'm a GIS analyst and spatial data scientist with an M.S. in Cartography &amp; Geographic Information Sciences from UW&#8209;Madison, building tools at the intersection of spatial analysis, machine learning, and interactive web mapping.</p>
+        <p>My portfolio spans 18 deployed projects covering public safety analytics, environmental risk modeling, climate displacement forecasting, and urban equity research — built with Python, Leaflet, Streamlit, PostGIS, and satellite remote-sensing pipelines. I engineer full data workflows from raw government and satellite datasets through to published, interactive web applications.</p>
+        <p>Professionally, I've applied GIS in civil engineering at Bono Consulting and Primera Engineers, and in municipal government at the Village of Wilmette — developing plan sets, topographic surveys, and data visualizations for infrastructure projects. I'm currently open to GIS analyst, spatial data scientist, and remote sensing roles in Florida, North Carolina, and remote positions.</p>
       </div>
 
       <div class="bio-block">
@@ -216,7 +224,25 @@
 </div>
 
 <!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
-<footer>Ethan Kalchik &mdash; GIS &amp; Spatial Analytics Portfolio</footer>
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Ethan Kalchik</span>
+    <span class="footer-sep">&mdash;</span>
+    <span class="footer-desc">GIS &amp; Spatial Analytics</span>
+    <div class="footer-links">
+      <a href="mailto:kalchikethan@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/ethan-kalchik-1a6619196/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/kalchikee" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <span class="footer-year">&copy; 2026</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('open');
+  });
+</script>
 
 </body>
 </html>

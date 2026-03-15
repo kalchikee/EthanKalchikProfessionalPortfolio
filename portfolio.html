@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visual Portfolio — Ethan Kalchik</title>
+  <meta name="description" content="Visual portfolio of GIS maps, web applications, and spatial analyses by Ethan Kalchik.">
+  <meta property="og:title" content="Visual Portfolio &mdash; Ethan Kalchik">
+  <meta property="og:description" content="Maps, applications, and spatial analyses spanning environmental risk, public safety, climate, and urban geography.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kalchikee.github.io/EthanKalchikProfessionalPortfolio/portfolio.html">
+  <meta property="og:image" content="https://kalchikee.github.io/EthanKalchikProfessionalPortfolio/assets/img/ethan3.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Visual Portfolio &mdash; Ethan Kalchik</title>
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
@@ -11,6 +18,7 @@
 <!-- ── NAV ──────────────────────────────────────────────────────────────── -->
 <nav>
   <a href="index.html" class="nav-logo">EK</a>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="portfolio.html" class="active">Visual Portfolio</a></li>
@@ -34,9 +42,19 @@
     <div class="section-rule"></div>
   </div>
 
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="python">Python / ML</button>
+    <button class="filter-btn" data-filter="leaflet">Leaflet / JS</button>
+    <button class="filter-btn" data-filter="environmental">Environmental</button>
+    <button class="filter-btn" data-filter="safety">Public Safety</button>
+    <button class="filter-btn" data-filter="climate">Climate</button>
+    <button class="filter-btn" data-filter="urban">Urban</button>
+  </div>
+
   <div class="projects-grid">
 
-    <a href="https://kalchikee.github.io/School-Noise/" class="project-card" target="_blank" rel="noopener">
+    <a href="https://kalchikee.github.io/School-Noise/" class="project-card" data-tags="leaflet environmental public-health" target="_blank" rel="noopener">
       <div class="project-img-wrap">
       <img src="assets/img/SchoolsNoise.png" alt="US Schools — Highway Noise Exposure">
       </div>
@@ -53,7 +71,7 @@
       </div>
     </a>
 
-    <a href="https://climate-migration-risk-model-2ynsivsq4f2bf5buytvqnb.streamlit.app/" class="project-card" target="_blank" rel="noopener">
+    <a href="https://climate-migration-risk-model-2ynsivsq4f2bf5buytvqnb.streamlit.app/" class="project-card" data-tags="python climate" target="_blank" rel="noopener">
       <div class="project-img-wrap">
       <img src="assets/img/climate-migration.png" alt="Climate Migration Risk Model">
       </div>
@@ -70,7 +88,7 @@
       </div>
     </a>
 
-    <a href="https://kalchikee.github.io/Storage-Tanks/" class="project-card" target="_blank" rel="noopener">
+    <a href="https://kalchikee.github.io/Storage-Tanks/" class="project-card" data-tags="leaflet environmental" target="_blank" rel="noopener">
       <div class="project-img-wrap">
       <img src="assets/img/Storagetanks.png" alt="Ghost Infrastructure">
       </div>
@@ -87,7 +105,7 @@
       </div>
     </a>
 
-    <a href="https://kalchikee.github.io/dark-sky-erosion-tracker/" class="project-card" target="_blank" rel="noopener">
+    <a href="https://kalchikee.github.io/dark-sky-erosion-tracker/" class="project-card" data-tags="environmental remote-sensing" target="_blank" rel="noopener">
       <div class="project-img-wrap">
       <img src="assets/img/DarkSkyErosion.png" alt="Dark Sky Erosion Tracker">
       </div>
@@ -104,7 +122,7 @@
       </div>
     </a>
 
-    <a href="https://kalchikee.github.io/commuter-gaps/" class="project-card" target="_blank" rel="noopener">
+    <a href="https://kalchikee.github.io/commuter-gaps/" class="project-card" data-tags="leaflet urban" target="_blank" rel="noopener">
       <div class="project-img-wrap">
       <img src="assets/img/CommuterGap.png" alt="The Commuter Gap">
       </div>
@@ -121,7 +139,7 @@
       </div>
     </a>
 
-    <a href="https://kalchikee.github.io/siren-gap/" class="project-card" target="_blank" rel="noopener">
+    <a href="https://kalchikee.github.io/siren-gap/" class="project-card" data-tags="leaflet safety" target="_blank" rel="noopener">
       <div class="project-img-wrap">
       <img src="assets/img/SirenGap.png" alt="The Siren Gap">
       </div>
@@ -138,7 +156,7 @@
       </div>
     </a>
 
-    <a href="https://kalchikee.github.io/cul-de-sac-trap/" class="project-card" target="_blank" rel="noopener">
+    <a href="https://kalchikee.github.io/cul-de-sac-trap/" class="project-card" data-tags="leaflet safety" target="_blank" rel="noopener">
       <div class="project-img-wrap">
       <img src="assets/img/Cul-De-Sac.png" alt="The Cul-de-Sac Trap">
       </div>
@@ -155,7 +173,7 @@
       </div>
     </a>
 
-    <a href="https://kalchikee.github.io/cemetery-sprawl-chicago/" class="project-card" target="_blank" rel="noopener">
+    <a href="https://kalchikee.github.io/cemetery-sprawl-chicago/" class="project-card" data-tags="leaflet urban" target="_blank" rel="noopener">
       <div class="project-img-wrap">
       <img src="assets/img/CemeterySprawl.png" alt="Cemetery Sprawl">
       </div>
@@ -172,7 +190,7 @@
       </div>
     </a>
 
-    <a href="https://kalchikee.github.io/ambulance-paradox/" class="project-card" target="_blank" rel="noopener">
+    <a href="https://kalchikee.github.io/ambulance-paradox/" class="project-card" data-tags="leaflet safety public-health" target="_blank" rel="noopener">
       <div class="project-img-wrap">
       <img src="assets/img/AmbulanceParadox.png" alt="The Ambulance Paradox">
       </div>
@@ -189,7 +207,7 @@
       </div>
     </a>
 
-    <a href="https://kalchikee.github.io/coastal-cities-sinking/" class="project-card" target="_blank" rel="noopener">
+    <a href="https://kalchikee.github.io/coastal-cities-sinking/" class="project-card" data-tags="leaflet climate" target="_blank" rel="noopener">
       <div class="project-img-wrap">
       <img src="assets/img/Subsidence Sentinel.png" alt="Subsidence Sentinel">
       </div>
@@ -206,7 +224,7 @@
       </div>
     </a>
 
-    <a href="https://freshwater-conflict-intelligence-fw7fau2c6hxb3xrcvvptqk.streamlit.app/" class="project-card" target="_blank" rel="noopener">
+    <a href="https://freshwater-conflict-intelligence-fw7fau2c6hxb3xrcvvptqk.streamlit.app/" class="project-card" data-tags="python climate" target="_blank" rel="noopener">
       <div class="project-img-wrap">
         <img src="assets/img/freshwater.png" alt="Freshwater Conflict Intelligence Platform">
       </div>
@@ -223,7 +241,7 @@
       </div>
     </a>
 
-    <a href="https://mexico-destination-suitability-62m22b96avwochwrezd33n.streamlit.app/" class="project-card" target="_blank" rel="noopener">
+    <a href="https://mexico-destination-suitability-62m22b96avwochwrezd33n.streamlit.app/" class="project-card" data-tags="python" target="_blank" rel="noopener">
       <div class="project-img-wrap">
         <img src="assets/img/Mexico.png" alt="Mexico Vacation Destination Suitability">
       </div>
@@ -240,7 +258,7 @@
       </div>
     </a>
 
-    <a href="https://global-food-security-ews-e8vwwi9m2yvn5nd8nhd64z.streamlit.app/" class="project-card" target="_blank" rel="noopener">
+    <a href="https://global-food-security-ews-e8vwwi9m2yvn5nd8nhd64z.streamlit.app/" class="project-card" data-tags="python climate remote-sensing" target="_blank" rel="noopener">
       <div class="project-img-wrap">
         <img src="assets/img/global_food.png" alt="Global Food Security Early Warning System">
       </div>
@@ -257,7 +275,7 @@
       </div>
     </a>
 
-    <a href="https://kalchikee.github.io/geospatial/" class="project-card" target="_blank" rel="noopener">
+    <a href="https://kalchikee.github.io/geospatial/" class="project-card" data-tags="python remote-sensing" target="_blank" rel="noopener">
       <div class="project-img-wrap">
         <img src="assets/img/ChicagoNDVI.png" alt="Chicago NDVI Monitor">
       </div>
@@ -274,7 +292,7 @@
       </div>
     </a>
 
-    <a href="Wildfires/" class="project-card">
+    <a href="Wildfires/" class="project-card" data-tags="leaflet safety">
       <div class="project-img-wrap">
         <img src="assets/img/Wildfire.png" alt="Wildfire Risk and Evacuation Planner">
       </div>
@@ -290,7 +308,7 @@
       </div>
     </a>
 
-    <a href="Geog%20778/Project/" class="project-card">
+    <a href="Geog%20778/Project/" class="project-card" data-tags="leaflet urban">
       <div class="project-img-wrap">
         <img src="assets/img/ILBroadband.png" alt="Illinois Broadband Gap Analysis">
       </div>
@@ -306,7 +324,7 @@
       </div>
     </a>
 
-    <a href="nitrate_cancer_app.html" class="project-card">
+    <a href="nitrate_cancer_app.html" class="project-card" data-tags="environmental public-health">
       <div class="project-img-wrap">
         <img src="assets/img/Wisconsin-Nitrate.png" alt="Wisconsin Nitrate Cancer Analysis">
       </div>
@@ -322,7 +340,7 @@
       </div>
     </a>
 
-    <a href="florida.html" class="project-card">
+    <a href="florida.html" class="project-card" data-tags="leaflet urban">
       <div class="project-img-wrap">
         <img src="assets/img/Florida-Gated.png" alt="Florida Gated Communities Map">
       </div>
@@ -343,6 +361,42 @@
 
 <!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
 <footer>Ethan Kalchik &mdash; GIS &amp; Spatial Analytics Portfolio</footer>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Ethan Kalchik</span>
+    <span class="footer-sep">&mdash;</span>
+    <span class="footer-desc">GIS &amp; Spatial Analytics</span>
+    <div class="footer-links">
+      <a href="mailto:kalchikethan@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/ethan-kalchik-1a6619196/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/kalchikee" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <span class="footer-year">&copy; 2026</span>
+  </div>
+</footer>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards      = document.querySelectorAll('.project-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      cards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        card.style.display = (f === 'all' || tags.includes(f)) ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('open');
+  });
+</script>
 
 </body>
 </html>
