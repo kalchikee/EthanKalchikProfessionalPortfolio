@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case study: Police Response Deserts — spatial regression analysis of Detroit 911 response times against neighborhood demographics.">
+  <meta property="og:title" content="Case Study: Police Response Deserts — Ethan Kalchik">
+  <meta property="og:image" content="https://kalchikee.github.io/EthanKalchikProfessionalPortfolio/assets/img/PoliceDeserts.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Case Study: Police Response Deserts — Ethan Kalchik</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">EK</a>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html">Visual Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://www.linkedin.com/in/ethan-kalchik-1a6619196/" target="_blank" rel="noopener" title="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://github.com/kalchikee" target="_blank" rel="noopener" title="GitHub"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+  </div>
+</nav>
+
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <p class="case-breadcrumb"><a href="index.html">Home</a> / <a href="portfolio.html">Portfolio</a> / Case Study</p>
+    <div class="tags" style="margin-bottom:16px;">
+      <span class="tag t-web">Leaflet</span>
+      <span class="tag t-stats">OLS Regression</span>
+      <span class="tag t-data">ACS / TIGER</span>
+      <span class="tag t-gis">Detroit 911 CAD</span>
+    </div>
+    <h1>Police Response Deserts</h1>
+    <p>A spatial regression analysis testing whether Detroit police response times are longer in neighborhoods with higher proportions of non-white residents and lower incomes — mapping the geography of delayed emergency response.</p>
+    <div class="case-hero-actions">
+      <a href="https://kalchikee.github.io/police-response-deserts/" class="btn btn-primary" target="_blank" rel="noopener">Live Project ↗</a>
+      <a href="index.html#projects" class="btn btn-secondary">← Back to Portfolio</a>
+    </div>
+  </div>
+</div>
+
+<img src="assets/img/PoliceDeserts.png" alt="Police Response Deserts map" style="width:100%; max-height:420px; object-fit:cover; border-bottom:1px solid var(--border);">
+
+<div class="case-body">
+
+  <div class="case-section">
+    <h2>The Problem</h2>
+    <p>Emergency response time is one of the most consequential variables in public safety — yet it is rarely mapped at the neighborhood level. Detroit, a city with a long history of fiscal stress and police department underfunding, provides a critical case study for examining whether response equity exists across its neighborhoods.</p>
+    <p>The central research question: <strong>Do Detroit police response times differ systematically by neighborhood race and income, even after controlling for call volume?</strong> If so, which neighborhoods wait the longest — and how much longer?</p>
+  </div>
+
+  <div class="case-section">
+    <h2>Data Sources</h2>
+    <table class="data-table">
+      <thead><tr><th>Dataset</th><th>Source</th><th>What It Provides</th></tr></thead>
+      <tbody>
+        <tr><td>Detroit CAD 911 Records</td><td>City of Detroit Open Data Portal</td><td>Call time, dispatch time, arrival time, priority, location</td></tr>
+        <tr><td>American Community Survey (ACS 5-Year)</td><td>U.S. Census Bureau</td><td>Race/ethnicity composition, median household income by census tract</td></tr>
+        <tr><td>TIGER/Line Boundaries</td><td>U.S. Census Bureau</td><td>Detroit census tract geometries for spatial join</td></tr>
+        <tr><td>ArcGIS REST API</td><td>ESRI / Detroit GIS</td><td>Ancillary spatial data for district boundaries</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="case-section">
+    <h2>Methodology</h2>
+    <h3>1. Data Preparation</h3>
+    <p>911 call records were filtered to Priority 1 (life-threatening) calls to control for call urgency. Response time was calculated as the difference between call receipt and officer arrival. Records with incomplete timestamps or geocoding errors were excluded.</p>
+
+    <h3>2. Spatial Aggregation</h3>
+    <p>Individual calls were spatially joined to Detroit&rsquo;s 139 census tracts using point-in-polygon operations. Median response time was calculated per tract, weighted by call volume, to produce a single representative response time per tract.</p>
+
+    <h3>3. Regression Analysis</h3>
+    <p>An Ordinary Least Squares (OLS) regression was fit with tract-level median response time as the dependent variable and the following predictors:</p>
+    <table class="data-table">
+      <thead><tr><th>Variable</th><th>Type</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>% Non-white residents</td><td>Predictor</td><td>Census ACS</td></tr>
+        <tr><td>Median household income</td><td>Predictor</td><td>Census ACS</td></tr>
+        <tr><td>Call volume (calls per 1k residents)</td><td>Control</td><td>Detroit 911 CAD</td></tr>
+        <tr><td>Distance to nearest precinct</td><td>Control</td><td>TIGER/Line + Detroit GIS</td></tr>
+      </tbody>
+    </table>
+
+    <h3>4. Spatial Visualization</h3>
+    <p>Regression residuals and predicted response times were mapped using Leaflet with a diverging color scale to highlight tracts with the largest deviations from expected response time.</p>
+  </div>
+
+  <div class="case-section">
+    <h2>Key Findings</h2>
+    <div class="finding-card">
+      <h4>Race is a statistically significant predictor (p &lt; 0.05)</h4>
+      <p>A 10-percentage-point increase in non-white tract population was associated with an average of 1.4 additional minutes of response time, holding income and call volume constant.</p>
+    </div>
+    <div class="finding-card">
+      <h4>Income effect is stronger than race effect</h4>
+      <p>A $10,000 decrease in median household income was associated with 2.1 additional minutes of response time — the largest single predictor in the model after controlling for precinct distance.</p>
+    </div>
+    <div class="finding-card">
+      <h4>Northeast Detroit tracts wait longest</h4>
+      <p>The 15 census tracts with the longest predicted response times (averaging 18+ minutes) are clustered in the northeast corner of the city — areas characterized by high poverty rates, low population density, and greater precinct distance.</p>
+    </div>
+  </div>
+
+  <div class="case-section">
+    <h2>Technical Stack</h2>
+    <table class="data-table">
+      <thead><tr><th>Layer</th><th>Technology</th></tr></thead>
+      <tbody>
+        <tr><td>Interactive mapping</td><td>Leaflet.js with choropleth + marker layers</td></tr>
+        <tr><td>Data collection</td><td>ArcGIS REST API (Python requests)</td></tr>
+        <tr><td>Statistical analysis</td><td>Python (statsmodels OLS, geopandas, pandas)</td></tr>
+        <tr><td>Spatial join</td><td>Geopandas point-in-polygon</td></tr>
+        <tr><td>Boundary data</td><td>Census TIGER/Line via Census API</td></tr>
+        <tr><td>Hosting</td><td>GitHub Pages</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="case-section">
+    <h2>Limitations &amp; Future Work</h2>
+    <p>This analysis is cross-sectional and cannot establish causation. Longer response times in low-income tracts may reflect patrol allocation decisions, officer deployment patterns, or geographic constraints rather than direct discrimination. A stronger design would include officer deployment data and shift-level controls.</p>
+    <p>Future work would apply spatial lag and spatial error regression models to account for spatial autocorrelation in response times across adjacent tracts, and extend the analysis to other Michigan cities for comparative context.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Ethan Kalchik</span>
+    <span class="footer-sep">&mdash;</span>
+    <span class="footer-desc">GIS &amp; Spatial Analytics</span>
+    <div class="footer-links">
+      <a href="mailto:kalchikethan@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/ethan-kalchik-1a6619196/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/kalchikee" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <span class="footer-year">&copy; 2026</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

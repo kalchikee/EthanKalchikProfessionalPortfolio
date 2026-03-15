@@ -12,6 +12,14 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Visual Portfolio &mdash; Ethan Kalchik</title>
   <link rel="stylesheet" href="site.css">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
 
@@ -25,6 +33,10 @@
     <li><a href="about.html">About</a></li>
     <li><a href="resume.html">Resume</a></li>
   </ul>
+  <div class="nav-social">
+    <a href="https://www.linkedin.com/in/ethan-kalchik-1a6619196/" target="_blank" rel="noopener" title="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://github.com/kalchikee" target="_blank" rel="noopener" title="GitHub"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+  </div>
 </nav>
 
 <!-- ── PAGE BANNER ──────────────────────────────────────────────────────── -->
@@ -67,7 +79,8 @@
         </div>
         <h3>The Shade Deficit</h3>
         <p>Analyzes tree canopy coverage gaps along school walking routes in Austin, TX to map shade equity disparities against demographic data.</p>
-        <span class="card-link">View project</span>
+        <p class="card-stack">Data: ACS 2022, OSMnx pedestrian network, i-Tree canopy &middot; Method: Network gap analysis</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -83,7 +96,8 @@
         </div>
         <h3>Blight Contagion</h3>
         <p>Tests the contagion hypothesis that property abandonment in Detroit spreads spatially to neighboring parcels, using spatial autocorrelation and predictive modeling.</p>
-        <span class="card-link">View project</span>
+        <p class="card-stack">Data: Detroit parcel vacancy records &middot; Method: Moran&#8217;s I, LISA spatial autocorrelation</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -99,7 +113,8 @@
         </div>
         <h3>Power Grid Fragility</h3>
         <p>Nationwide blackout vulnerability index across 3,144 US counties, combining grid reliability, weather hazards, demographic risk, and FEMA NRI data into a weighted composite score.</p>
-        <span class="card-link">View project</span>
+        <p class="card-stack">Data: EIA-861/860, FEMA NRI v1.20, Census ACS &middot; Method: 5-factor weighted composite index</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -115,7 +130,8 @@
         </div>
         <h3>Police Response Deserts</h3>
         <p>Spatial analysis of Detroit 911 call data examining whether police response times correlate with neighborhood race and income using OLS regression.</p>
-        <span class="card-link">View project</span>
+        <p class="card-stack">Data: Detroit CAD 911 records, ACS, TIGER/Line &middot; Method: OLS regression, spatial join</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -131,7 +147,8 @@
         </div>
         <h3>Bridge Collapse Risk</h3>
         <p>Composite risk scoring across 617,597 US highway bridges using FHWA inspection data — weighting structural condition, traffic exposure, age, detour impact, and scour vulnerability.</p>
-        <span class="card-link">View project</span>
+        <p class="card-stack">Data: FHWA NBI 2023 (617k bridges) &middot; Method: 5-factor composite risk score</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -148,7 +165,8 @@
         </div>
         <h3>Crash Anatomy</h3>
         <p>Interactive visualization of 185,000+ fatal US traffic collisions (2019–2023), filterable by year, crash type, road type, and location setting using NHTSA FARS data.</p>
-        <span class="card-link">View project</span>
+        <p class="card-stack">Data: NHTSA FARS 2019&#8211;2023 (185k records) &middot; Method: Density viz &amp; temporal filtering</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -165,7 +183,8 @@
       </div>
       <h3>US Schools — Highway Noise Exposure</h3>
       <p>National analysis of ~67,000 public elementary schools modeled against WHO cognitive development thresholds, examining whether low-income communities face disproportionate highway noise impacts.</p>
-      <span class="card-link">View project</span>
+      <p class="card-stack">Data: NCES EDGE 2023, Census TIGER &middot; Method: ISO 9613-2 acoustic attenuation model</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -182,7 +201,8 @@
       </div>
       <h3>Climate Migration Risk Model</h3>
       <p>Interactive risk model identifying regions most vulnerable to climate-driven displacement by combining temperature anomalies, sea level rise, drought indices, and socioeconomic factors to forecast migration pressure hotspots.</p>
-      <span class="card-link">View project</span>
+      <p class="card-stack">Data: NASA CMIP6, FEMA, Census ACS &middot; Method: Multi-factor weighted displacement index</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -199,7 +219,8 @@
       </div>
       <h3>Ghost Infrastructure — Storage Tank Risk</h3>
       <p>Interactive map of Harris County leaking underground storage tank sites integrating soil, groundwater, and TCEQ registry data to score contamination risk to drinking water wells and prioritize remediation.</p>
-      <span class="card-link">View project</span>
+      <p class="card-stack">Data: EPA HIFLD, Census ACS &middot; Method: Proximity analysis, environmental justice scoring</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -216,7 +237,8 @@
       </div>
       <h3>Dark Sky Erosion Tracker</h3>
       <p>Tracks artificial radiance changes across Colorado's Front Range from 2012–2024 using satellite night-lights data, identifying development impacts on wildlife corridors and dark sky preservation areas.</p>
-      <span class="card-link">View project</span>
+      <p class="card-stack">Data: VIIRS DNB VNL v2.1, PAD-US 3.0, NLCD &middot; Method: Raster change detection 2012&#8211;2024</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -233,7 +255,8 @@
       </div>
       <h3>The Commuter Gap</h3>
       <p>Maps transit deserts and commuter accessibility disparities, revealing where low-income workers face the greatest mismatch between residential location and job centers.</p>
-      <span class="card-link">View project</span>
+      <p class="card-stack">Data: GTFS transit feeds, Census ACS &middot; Method: Network accessibility gap analysis</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -250,7 +273,8 @@
       </div>
       <h3>The Siren Gap</h3>
       <p>Identifies tornado warning dead zones in the Moore/Norman/OKC region where sound levels fall below 70 dB, pinpointing 2,236 km² of inadequate coverage affecting ~246,000 residents.</p>
-      <span class="card-link">View project</span>
+      <p class="card-stack">Data: FCC, Census, USGS DEM &middot; Method: RF signal propagation modeling</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -267,7 +291,8 @@
       </div>
       <h3>The Cul-de-Sac Trap</h3>
       <p>Ranks Oakland/Berkeley Hills subdivisions by evacuation vulnerability using road network topology metrics to expose neighborhoods with critically limited egress routes during wildfires or emergencies.</p>
-      <span class="card-link">View project</span>
+      <p class="card-stack">Data: OSM, TIGER/Line, Census ACS &middot; Method: Street network morphology analysis</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -284,7 +309,8 @@
       </div>
       <h3>Cemetery Sprawl — Chicago</h3>
       <p>Examines urban land locked in perpetual non-use by mapping Chicago cemeteries against demographic patterns, transit access, and historical HOLC redlining boundaries to reveal deep spatial inequities.</p>
-      <span class="card-link">View project</span>
+      <p class="card-stack">Data: Cook County parcels, NLCD &middot; Method: Land consumption &amp; temporal change analysis</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -301,7 +327,8 @@
       </div>
       <h3>The Ambulance Paradox</h3>
       <p>Maps EMS response time disparities across Dallas–Fort Worth to identify zones where response times exceed cardiac survival thresholds, overlaying heart disease prevalence to quantify mortality risk by geography.</p>
-      <span class="card-link">View project</span>
+      <p class="card-stack">Data: Chicago 911 CAD, Census ACS &middot; Method: Drive-time isochrones, OLS regression</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -318,7 +345,8 @@
       </div>
       <h3>Subsidence Sentinel</h3>
       <p>Visualizes combined ground subsidence and sea level rise threatening Houston-Galveston, where localized sinking rates exceed 25 mm/yr, mapping accelerating flood vulnerability across critical coastal infrastructure.</p>
-      <span class="card-link">View project</span>
+      <p class="card-stack">Data: NOAA CO-OPS API, InSAR (U. Houston), SRTM &middot; Method: Relative SLR projection</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -335,7 +363,8 @@
         </div>
         <h3>Freshwater Conflict Intelligence Platform</h3>
         <p>Transboundary water stress and geopolitical instability analytics using a Water Stress Conflict Index, Random Forest risk classification, spatial autocorrelation, and SSP climate scenario projections.</p>
-        <span class="card-link">View project</span>
+        <p class="card-stack">Data: AQUASTAT, ACLED, GloFAS &middot; Method: NLP conflict extraction, composite risk index</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -352,7 +381,8 @@
         </div>
         <h3>Mexico Vacation Destination Suitability</h3>
         <p>Interactive multi-criteria decision analysis tool ranking Mexican destinations by accessibility, climate comfort, safety, and tourism amenities — with customizable traveler profiles and weighted overlays.</p>
-        <span class="card-link">View project</span>
+        <p class="card-stack">Data: INEGI, USDA, Sentinel-2 &middot; Method: Multi-criteria suitability analysis</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -369,7 +399,8 @@
         </div>
         <h3>Global Food Security Early Warning System</h3>
         <p>Spatiotemporal dashboard forecasting agricultural failure and famine risk using NDVI anomalies, climate stress indices, conflict proximity, and ML-based IPC phase forecasting 6 months ahead.</p>
-        <span class="card-link">View project</span>
+        <p class="card-stack">Data: FAO, MODIS NDVI, FEWS NET &middot; Method: Composite food security early warning index</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -386,7 +417,8 @@
         </div>
         <h3>Chicago NDVI Monitor</h3>
         <p>Urban vegetation intelligence platform tracking greenspace health across Chicago using Sentinel-2 satellite imagery, PostGIS, and AWS Cloud Optimized GeoTIFFs with time-series analysis and degradation flagging.</p>
-        <span class="card-link">View project</span>
+        <p class="card-stack">Data: Sentinel-2, Landsat-8 &middot; Method: NDVI time-series, spectral change detection</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -402,7 +434,8 @@
         </div>
         <h3>Wildfire Risk &amp; Evacuation Planner</h3>
         <p>Web mapping application for visualizing California wildfire perimeters, modeling fire risk by time of day, and generating dynamic evacuation routes.</p>
-        <span class="card-link">View project</span>
+        <p class="card-stack">Data: USFS, NIFC fire perimeters, NLCD &middot; Method: Multi-factor risk overlay analysis</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -418,7 +451,8 @@
         </div>
         <h3>Illinois Broadband Gap Analysis</h3>
         <p>Interactive tool mapping fixed and mobile broadband coverage gaps across Illinois communities, combining Leaflet mapping with dynamic Chart.js analytics.</p>
-        <span class="card-link">View project</span>
+        <p class="card-stack">Data: FCC Form 477, Census ACS &middot; Method: Coverage gap analysis &amp; equity mapping</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -434,7 +468,8 @@
         </div>
         <h3>Wisconsin Nitrate &amp; Cancer Analysis</h3>
         <p>IDW interpolation and linear regression exploring links between agricultural nitrate contamination and cancer rates across Wisconsin census tracts.</p>
-        <span class="card-link">View project</span>
+        <p class="card-stack">Data: WGNHS well records, Census ACS &middot; Method: IDW interpolation, spatial regression</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -449,7 +484,8 @@
         </div>
         <h3>Florida Gated Communities Map</h3>
         <p>Interactive Leaflet map exploring gated communities across Florida with clustering, price-range filtering, and detailed community profiles.</p>
-        <span class="card-link">View project</span>
+        <p class="card-stack">Data: FL county parcel data, Census ACS &middot; Method: Gated community accessibility analysis</p>
+    <span class="card-link">View project</span>
       </div>
     </a>
 
@@ -475,6 +511,10 @@
 </footer>
 
 <script>
+  // URL param filter on load
+  const urlParams = new URLSearchParams(window.location.search);
+  const initFilter = urlParams.get('filter');
+
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards      = document.querySelectorAll('.project-card');
   filterBtns.forEach(btn => {
@@ -486,6 +526,12 @@
         const tags = card.dataset.tags || '';
         card.style.display = (f === 'all' || tags.includes(f)) ? '' : 'none';
       });
+
+  // Apply URL param on load
+  if (initFilter) {
+    const btn = document.querySelector(\`[data-filter="${initFilter}"]\`);
+    if (btn) btn.click();
+  }
     });
   });
 </script>

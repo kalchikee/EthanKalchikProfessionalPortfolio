@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case study: Power Grid Fragility — how I built a nationwide blackout vulnerability index across 3,144 US counties.">
+  <meta property="og:title" content="Case Study: Power Grid Fragility — Ethan Kalchik">
+  <meta property="og:image" content="https://kalchikee.github.io/EthanKalchikProfessionalPortfolio/assets/img/Power Grid Fragility.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Case Study: Power Grid Fragility — Ethan Kalchik</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">EK</a>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html">Visual Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://www.linkedin.com/in/ethan-kalchik-1a6619196/" target="_blank" rel="noopener" title="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://github.com/kalchikee" target="_blank" rel="noopener" title="GitHub"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+  </div>
+</nav>
+
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <p class="case-breadcrumb"><a href="index.html">Home</a> / <a href="portfolio.html">Portfolio</a> / Case Study</p>
+    <div class="tags" style="margin-bottom:16px;">
+      <span class="tag t-web">Leaflet</span>
+      <span class="tag t-gis">EIA / FEMA NRI</span>
+      <span class="tag t-stats">Risk Index</span>
+      <span class="tag t-data">3,144 Counties</span>
+    </div>
+    <h1>Power Grid Fragility</h1>
+    <p>A nationwide blackout vulnerability index identifying which of America&rsquo;s 3,144 counties are most at risk of prolonged power outages — and why.</p>
+    <div class="case-hero-actions">
+      <a href="https://kalchikee.github.io/power-grid-fragility/" class="btn btn-primary" target="_blank" rel="noopener">Live Project ↗</a>
+      <a href="index.html#projects" class="btn btn-secondary">← Back to Portfolio</a>
+    </div>
+  </div>
+</div>
+
+<img src="assets/img/Power Grid Fragility.png" alt="Power Grid Fragility map" style="width:100%; max-height:420px; object-fit:cover; border-bottom:1px solid var(--border);">
+
+<div class="case-body">
+
+  <div class="case-section">
+    <h2>The Problem</h2>
+    <p>The 2021 Texas winter storm killed over 240 people and caused $195 billion in damage — largely because the ERCOT grid was unprepared for extreme cold. It was not an isolated event. Between 2000 and 2023, major outages affecting 50,000+ customers have increased by over 60%.</p>
+    <p>Yet there was no publicly accessible tool mapping <em>where</em> grid vulnerability combines with population vulnerability to create catastrophic risk. Utilities report reliability statistics. FEMA models natural hazard exposure. The Census tracks who is most dependent on electricity. But no one had combined these into a county-level composite risk index — until this project.</p>
+  </div>
+
+  <div class="case-section">
+    <h2>Data Sources</h2>
+    <table class="data-table">
+      <thead><tr><th>Dataset</th><th>Source</th><th>What It Measures</th></tr></thead>
+      <tbody>
+        <tr><td>EIA Form 861</td><td>U.S. Energy Information Administration</td><td>SAIDI / SAIFI reliability metrics per utility</td></tr>
+        <tr><td>EIA Form 860</td><td>U.S. Energy Information Administration</td><td>Power plant locations, fuel type, capacity</td></tr>
+        <tr><td>FEMA NRI v1.20</td><td>FEMA National Risk Index</td><td>Natural hazard composite risk by county</td></tr>
+        <tr><td>Census ACS 5-Year</td><td>U.S. Census Bureau</td><td>Elderly population (65+) share, poverty rate</td></tr>
+        <tr><td>EIA Outage Records</td><td>U.S. Energy Information Administration</td><td>Historical major outage events 2015–2023</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="case-section">
+    <h2>Methodology</h2>
+    <p>Each county receives a Blackout Vulnerability Index (BVI) score from 0–100, computed as a weighted sum of five normalized factors:</p>
+    <table class="data-table">
+      <thead><tr><th>Factor</th><th>Weight</th><th>Rationale</th></tr></thead>
+      <tbody>
+        <tr><td>Grid Reliability (SAIDI/SAIFI)</td><td>30%</td><td>Utilities with high average outage duration/frequency are structurally weaker</td></tr>
+        <tr><td>Weather Hazard Exposure</td><td>25%</td><td>Counties exposed to hurricanes, ice storms, and extreme heat face higher grid stress</td></tr>
+        <tr><td>FEMA National Risk Index</td><td>20%</td><td>Composite federal risk score incorporates 18 natural hazard types</td></tr>
+        <tr><td>Elderly Population (65+)</td><td>15%</td><td>Older residents face greater health risk during outages (medical devices, heat/cold)</td></tr>
+        <tr><td>Poverty Rate</td><td>10%</td><td>Low-income households lack resources to cope with extended outages</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:16px;">All factors were normalized to a 0–1 range using min-max scaling before weighting. Counties were then binned into five risk tiers: Minimal, Low, Moderate, High, and Very High.</p>
+  </div>
+
+  <div class="case-section">
+    <h2>Key Findings</h2>
+    <div class="finding-card">
+      <h4>847 counties rated High or Very High risk</h4>
+      <p>Concentrated in the Gulf Coast, Deep South, Appalachia, and Puerto Rico — regions where aging grid infrastructure meets frequent severe weather and high poverty rates.</p>
+    </div>
+    <div class="finding-card">
+      <h4>ERCOT grid isolation amplifies Texas risk</h4>
+      <p>Texas&rsquo;s grid isolation from the Eastern and Western Interconnections limits its ability to import power during crises, a structural vulnerability reflected in elevated BVI scores across most of the state.</p>
+    </div>
+    <div class="finding-card">
+      <h4>Elderly population is the strongest social amplifier</h4>
+      <p>Counties in the top 10% for elderly population share consistently score 12–18 points higher on BVI than demographically similar counties with younger populations, controlling for hazard exposure.</p>
+    </div>
+  </div>
+
+  <div class="case-section">
+    <h2>Technical Stack</h2>
+    <table class="data-table">
+      <thead><tr><th>Layer</th><th>Technology</th></tr></thead>
+      <tbody>
+        <tr><td>Interactive mapping</td><td>Leaflet.js with choropleth layers</td></tr>
+        <tr><td>Data preprocessing</td><td>Python (pandas, geopandas, NumPy)</td></tr>
+        <tr><td>Spatial data</td><td>GeoJSON county boundaries (Census TIGER/Line)</td></tr>
+        <tr><td>Filtering &amp; UI</td><td>Vanilla JavaScript, custom layer controls</td></tr>
+        <tr><td>Hosting</td><td>GitHub Pages</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="case-section">
+    <h2>Reflections</h2>
+    <p>The biggest methodological challenge was reconciling EIA utility service territories with county boundaries — utilities often serve partial counties, requiring area-weighted aggregation of SAIDI/SAIFI metrics. Future improvements would incorporate smart meter penetration rates and transmission line age data from HIFLD for a more granular grid reliability score.</p>
+    <p>This project demonstrated that combining publicly available government datasets with a transparent, reproducible weighting methodology can produce actionable risk maps that individual datasets alone cannot provide.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Ethan Kalchik</span>
+    <span class="footer-sep">&mdash;</span>
+    <span class="footer-desc">GIS &amp; Spatial Analytics</span>
+    <div class="footer-links">
+      <a href="mailto:kalchikethan@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/ethan-kalchik-1a6619196/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/kalchikee" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <span class="footer-year">&copy; 2026</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
