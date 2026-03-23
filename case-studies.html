@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="In-depth case studies in GIS, spatial analysis, and machine learning by Ethan Kalchik — methodology, findings, and technical stack.">
+  <meta property="og:title" content="Case Studies &mdash; Ethan Kalchik">
+  <meta property="og:description" content="Deep-dive case studies covering air quality equity, lead pipe prediction, power grid vulnerability, and police response disparities.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kalchikee.github.io/EthanKalchikProfessionalPortfolio/case-studies.html">
+  <meta property="og:image" content="https://kalchikee.github.io/EthanKalchikProfessionalPortfolio/assets/img/ethan3.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Case Studies &mdash; Ethan Kalchik</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">EK</a>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html">Visual Portfolio</a></li>
+    <li><a href="case-studies.html" class="active">Case Studies</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://www.linkedin.com/in/ethan-kalchik-1a6619196/" target="_blank" rel="noopener" title="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://github.com/kalchikee" target="_blank" rel="noopener" title="GitHub"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+  </div>
+</nav>
+
+<div class="page-banner">
+  <p class="page-banner-label">Deep Dives</p>
+  <h1>Case Studies</h1>
+  <p>Methodology, findings, and technical decisions behind the work</p>
+</div>
+
+<div class="section-wrap">
+  <div class="featured-grid">
+
+    <div class="featured-card">
+      <div class="featured-img-wrap">
+        <img src="assets/img/Power Grid Fragility.png" alt="Power Grid Fragility">
+      </div>
+      <div class="featured-body">
+        <div class="tags">
+          <span class="tag t-web">Leaflet</span>
+          <span class="tag t-gis">EIA / FEMA NRI</span>
+          <span class="tag t-stats">Risk Index</span>
+        </div>
+        <h3>Power Grid Fragility &mdash; Blackout Vulnerability Index</h3>
+        <p>Nationwide composite risk model across all 3,144 US counties, combining grid reliability metrics, weather hazard exposure, elderly population share, and poverty rate into a single weighted vulnerability index.</p>
+        <div class="featured-meta">
+          <div class="featured-meta-row"><strong>Data</strong> EIA-861/860 &middot; FEMA NRI v1.20 &middot; Census ACS &middot; EIA Outage Records</div>
+          <div class="featured-meta-row"><strong>Method</strong> 5-factor weighted composite: 30% Grid + 25% Hazard + 20% FEMA NRI + 15% Elderly + 10% Poverty</div>
+          <div class="featured-meta-row"><strong>Scale</strong> 3,144 counties &middot; 50 states &middot; 847 counties rated High or Very High risk</div>
+        </div>
+        <div class="featured-actions">
+          <a href="case-power-grid.html" class="btn btn-primary">Read Case Study</a>
+          <a href="https://kalchikee.github.io/power-grid-fragility/" class="btn btn-outline" target="_blank" rel="noopener">Live Project &#8599;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-card">
+      <div class="featured-img-wrap">
+        <img src="assets/img/PoliceDeserts.png" alt="Police Response Deserts">
+      </div>
+      <div class="featured-body">
+        <div class="tags">
+          <span class="tag t-web">Leaflet</span>
+          <span class="tag t-stats">OLS Regression</span>
+          <span class="tag t-data">ACS / TIGER</span>
+        </div>
+        <h3>Police Response Deserts &mdash; Detroit 911 Equity Analysis</h3>
+        <p>Spatial regression analysis testing whether police response times in Detroit correlate with neighborhood race and income, mapping the geography of delayed emergency response across 139 census tracts.</p>
+        <div class="featured-meta">
+          <div class="featured-meta-row"><strong>Data</strong> Detroit CAD 911 records &middot; Census ACS 2022 &middot; TIGER/Line boundaries</div>
+          <div class="featured-meta-row"><strong>Method</strong> OLS regression (response time ~ % non-white + median income) &middot; Spatial join to census tracts</div>
+          <div class="featured-meta-row"><strong>Finding</strong> Statistically significant response time disparities correlated with race and income</div>
+        </div>
+        <div class="featured-actions">
+          <a href="case-police-deserts.html" class="btn btn-primary">Read Case Study</a>
+          <a href="https://kalchikee.github.io/police-response-deserts/" class="btn btn-outline" target="_blank" rel="noopener">Live Project &#8599;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-card">
+      <div class="featured-img-wrap">
+        <img src="assets/img/LeadPipe.png" alt="The Lead Pipe Map">
+      </div>
+      <div class="featured-body">
+        <div class="tags">
+          <span class="tag t-data">XGBoost</span>
+          <span class="tag t-stats">0.87 AUC-ROC</span>
+          <span class="tag t-gis">Public Health</span>
+        </div>
+        <h3>The Lead Pipe Map &mdash; Chicago Lead Service Line Prediction</h3>
+        <p>XGBoost classification model predicting which of Chicago&rsquo;s ~800,000 unverified properties are likely connected by a lead service line, using Cook County Assessor records to prioritize infrastructure replacement.</p>
+        <div class="featured-meta">
+          <div class="featured-meta-row"><strong>Data</strong> Cook County Assessor &middot; Chicago CDOT &middot; Water main age records &middot; Census TIGER/Line</div>
+          <div class="featured-meta-row"><strong>Method</strong> XGBoost classification &middot; Top features: construction year, distance to known lead main, water main age</div>
+          <div class="featured-meta-row"><strong>Performance</strong> 0.87 AUC-ROC &middot; ~112,000 unverified properties flagged high-risk</div>
+        </div>
+        <div class="featured-actions">
+          <a href="case-lead-pipe.html" class="btn btn-primary">Read Case Study</a>
+          <a href="https://kalchikee.github.io/lead-pipe-map/" class="btn btn-outline" target="_blank" rel="noopener">Live Project &#8599;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-card">
+      <div class="featured-img-wrap">
+        <img src="assets/img/BreathingZone.png" alt="The Breathing Zone">
+      </div>
+      <div class="featured-body">
+        <div class="tags">
+          <span class="tag t-web">Leaflet</span>
+          <span class="tag t-stats">Environmental</span>
+          <span class="tag t-gis">EPA AQS / PurpleAir</span>
+        </div>
+        <h3>The Breathing Zone &mdash; School Bus Air Quality Equity</h3>
+        <p>Air quality exposure analysis across 25 LA school bus routes measuring PM2.5 and NO2 at 100m intervals, revealing students in low-income neighborhoods breathe 2.4x more polluted air on their way to school.</p>
+        <div class="featured-meta">
+          <div class="featured-meta-row"><strong>Data</strong> EPA AQS &middot; PurpleAir (corrected) &middot; Caltrans traffic counts &middot; NCES school locations &middot; Census ACS</div>
+          <div class="featured-meta-row"><strong>Method</strong> Inhalation Exposure Index &middot; PM2.5 50% + NO2 35% + traffic density 15% &middot; 100m interval sampling</div>
+          <div class="featured-meta-row"><strong>Finding</strong> 2.4x equity gap &middot; 8 routes exceed EPA annual PM2.5 standard &middot; Morning routes 23% worse</div>
+        </div>
+        <div class="featured-actions">
+          <a href="case-breathing-zone.html" class="btn btn-primary">Read Case Study</a>
+          <a href="https://kalchikee.github.io/breathing-zone/" class="btn btn-outline" target="_blank" rel="noopener">Live Project &#8599;</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Ethan Kalchik</span>
+    <span class="footer-sep">&mdash;</span>
+    <span class="footer-desc">GIS &amp; Spatial Analytics</span>
+    <div class="footer-links">
+      <a href="mailto:kalchikethan@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/ethan-kalchik-1a6619196/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/kalchikee" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <span class="footer-year">&copy; 2026</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
