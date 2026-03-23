@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case study: The Breathing Zone — mapping air quality exposure on 25 Los Angeles school bus routes and finding a 2.4x equity gap.">
+  <meta property="og:title" content="Case Study: The Breathing Zone — Ethan Kalchik">
+  <meta property="og:image" content="https://kalchikee.github.io/EthanKalchikProfessionalPortfolio/assets/img/BreathingZone.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Case Study: The Breathing Zone — Ethan Kalchik</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">EK</a>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html">Visual Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://www.linkedin.com/in/ethan-kalchik-1a6619196/" target="_blank" rel="noopener" title="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://github.com/kalchikee" target="_blank" rel="noopener" title="GitHub"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+  </div>
+</nav>
+
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <p class="case-breadcrumb"><a href="index.html">Home</a> / <a href="portfolio.html">Portfolio</a> / Case Study</p>
+    <div class="tags" style="margin-bottom:16px;">
+      <span class="tag t-web">Leaflet</span>
+      <span class="tag t-stats">Environmental</span>
+      <span class="tag t-gis">EPA AQS / PurpleAir</span>
+      <span class="tag t-data">2.4x Equity Gap</span>
+    </div>
+    <h1>The Breathing Zone</h1>
+    <p>An air quality exposure analysis of 25 Los Angeles school bus routes revealing that students in low-income neighborhoods breathe 2.4x more polluted air on their way to school than students on other routes.</p>
+    <div class="case-hero-actions">
+      <a href="https://kalchikee.github.io/breathing-zone/" class="btn btn-primary" target="_blank" rel="noopener">Live Project ↗</a>
+      <a href="index.html#projects" class="btn btn-secondary">← Back to Portfolio</a>
+    </div>
+  </div>
+</div>
+
+<img src="assets/img/BreathingZone.png" alt="The Breathing Zone" style="width:100%; max-height:420px; object-fit:cover; border-bottom:1px solid var(--border);">
+
+<div class="case-body">
+
+  <div class="case-section">
+    <h2>The Problem</h2>
+    <p>When I started this project I was thinking about where children actually spend time breathing outdoor air and school buses came to mind immediately. About 26 million students ride school buses in the United States every day and the reason this is a bigger deal than it sounds is that students sit at tailpipe height. On a school bus that means you are sitting right in what air quality researchers call the breathing zone — the layer of air where diesel exhaust, PM2.5, and NO2 are most concentrated before they disperse upward.</p>
+    <p>The thing that bothered me was that I could not find any tool that actually mapped air quality conditions along specific school bus routes at a fine enough resolution to be useful. There is plenty of research on the general problem of diesel bus emissions but nobody had built something that said here are route A and route B and here is how the exposure on those two routes compares by income level of the neighborhoods they serve. That is what I was trying to build.</p>
+  </div>
+
+  <div class="case-section">
+    <h2>Data Sources</h2>
+    <table class="data-table">
+      <thead><tr><th>Dataset</th><th>Source</th><th>What It Contributes</th></tr></thead>
+      <tbody>
+        <tr><td>PM2.5 &amp; NO2 Monitoring</td><td>EPA Air Quality System (AQS)</td><td>Reference-grade pollutant concentrations at fixed monitor locations</td></tr>
+        <tr><td>Hyperlocal PM2.5 Sensors</td><td>PurpleAir (EPA correction applied)</td><td>Dense spatial coverage at intersections and corridor segments</td></tr>
+        <tr><td>Traffic Count Data</td><td>Caltrans Traffic Census Program</td><td>Vehicle volume and heavy-truck percentage by road segment</td></tr>
+        <tr><td>School Bus Routes</td><td>LA Unified School District</td><td>25 digitized route geometries with stop locations</td></tr>
+        <tr><td>School Locations</td><td>NCES Common Core of Data</td><td>School socioeconomic context (Title I status, free/reduced lunch %)</td></tr>
+        <tr><td>Census ACS 5-Year</td><td>U.S. Census Bureau</td><td>Tract-level median household income along each route corridor</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="case-section">
+    <h2>Methodology</h2>
+
+    <h3>1. Route Segmentation at 100m Intervals</h3>
+    <p>The first methodological decision I made was to sample pollution levels at 100-meter intervals along each route and the reason I chose 100 meters is because air quality changes meaningfully at that scale in an urban environment — especially near intersections, bus stops, and freeway on-ramps where vehicles idle. Larger intervals would have smoothed over the worst exposure hotspots.</p>
+
+    <h3>2. Sensor Fusion and Correction</h3>
+    <p>I used both EPA AQS reference monitors and PurpleAir low-cost sensors but I did not just average them together. The reason PurpleAir sensors need a correction factor is because they use optical particle counting which tends to over-read PM2.5 in humid conditions. I applied the EPA correction equation published in 2021 to bring the PurpleAir readings into alignment with the reference monitors before I combined them. For each 100m segment I calculated a weighted average based on distance to the nearest sensor of each type.</p>
+
+    <h3>3. Traffic Weighting</h3>
+    <p>I also incorporated Caltrans traffic count data and the reason for that is because the same road segment can have very different air quality at 7am versus 3pm depending on traffic volume. Morning routes run during peak congestion so vehicles sit idling at intersections longer which increases the dose a student receives per unit of distance traveled. I used the time-of-day traffic factors to weight the exposure estimate for each segment up or down based on when the route actually runs.</p>
+
+    <h3>4. Inhalation Exposure Index</h3>
+    <p>I combined everything into an Inhalation Exposure Index scored 0 to 100 for each route. The IEI is a weighted composite of normalized PM2.5 concentration, normalized NO2 concentration, and a traffic density factor. I weighted PM2.5 at 50%, NO2 at 35%, and traffic density at 15% and the reason PM2.5 gets the highest weight is because it has the strongest epidemiological evidence linking it to long-term respiratory and cardiovascular harm in children.</p>
+
+    <table class="data-table" style="margin-top:16px;">
+      <thead><tr><th>IEI Component</th><th>Weight</th><th>Rationale</th></tr></thead>
+      <tbody>
+        <tr><td>PM2.5 Concentration (corrected)</td><td>50%</td><td>Strongest evidence base for pediatric respiratory harm</td></tr>
+        <tr><td>NO2 Concentration</td><td>35%</td><td>Key diesel combustion byproduct, strong asthma trigger</td></tr>
+        <tr><td>Traffic Density Factor</td><td>15%</td><td>Captures idling exposure at congested intersections and stops</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="case-section">
+    <h2>Key Findings</h2>
+    <div class="finding-card">
+      <h4>2.4x equity gap between low-income and other routes</h4>
+      <p>When I calculated IEI scores for all 25 routes and grouped them by the median household income of the neighborhoods they serve I found that routes serving tracts in the bottom income quartile had an average IEI score 2.4 times higher than routes serving the top income quartile. That gap is the central finding of the project and I think it is the most important number because it puts a specific magnitude on something that was previously just described in general terms.</p>
+    </div>
+    <div class="finding-card">
+      <h4>South LA and East LA routes score highest</h4>
+      <p>When I mapped the results the highest-scoring routes were concentrated in South Los Angeles and East Los Angeles and the reason those corridors score so high is that they run along or parallel to high-volume freight routes like the I-710 and I-110 corridors where diesel truck traffic is especially heavy during morning hours when school buses are running.</p>
+    </div>
+    <div class="finding-card">
+      <h4>Morning routes score 23% higher than afternoon routes on average</h4>
+      <p>What surprised me was how much the time of day mattered. I found that morning routes on the same corridor scored about 23% higher than afternoon routes on average and the reason for that is morning peak traffic is heavier and the thermal inversion layer that forms overnight traps pollutants close to the ground until the atmosphere heats up and mixes mid-morning.</p>
+    </div>
+    <div class="finding-card">
+      <h4>8 routes exceed EPA annual PM2.5 standard on a typical morning</h4>
+      <p>When I compared the segment-level PM2.5 estimates to the EPA annual standard of 9 &micro;g/m&sup3; I found that 8 of the 25 routes had at least one prolonged corridor segment — meaning more than 400 meters — where the estimated concentration exceeded that standard during a typical morning run.</p>
+    </div>
+  </div>
+
+  <div class="case-section">
+    <h2>Technical Stack</h2>
+    <table class="data-table">
+      <thead><tr><th>Layer</th><th>Technology</th></tr></thead>
+      <tbody>
+        <tr><td>Air quality data pipeline</td><td>Python — EPA AQS API, PurpleAir API, pandas for sensor fusion</td></tr>
+        <tr><td>Route segmentation</td><td>Python (Shapely, GeoPandas) — 100m interval point generation</td></tr>
+        <tr><td>Traffic weighting</td><td>Python — Caltrans CSV join, time-of-day factor application</td></tr>
+        <tr><td>Interactive map</td><td>Leaflet.js — route polylines colored by IEI score</td></tr>
+        <tr><td>Charts &amp; summaries</td><td>Chart.js — route comparison bar charts, equity gap visualization</td></tr>
+        <tr><td>Hosting</td><td>GitHub Pages</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="case-section">
+    <h2>Reflections</h2>
+    <p>The biggest limitation I want to be upfront about is that I am estimating exposure from stationary sensors and not from sensors actually on the buses. The reason that matters is that air quality inside a moving vehicle can differ from the roadside measurements I used depending on vehicle speed, window position, and the bus's own engine emissions. A more rigorous study would put sensors on the buses themselves but that was outside the scope of what I could do with publicly available data.</p>
+    <p>I also want to be clear that the PurpleAir sensors I used have gaps in spatial coverage and the reason that affects the results is that some 100m segments got their pollution estimate from a sensor that was farther away than I would have liked. I tried to flag high-uncertainty segments in the data but the map does not currently communicate that uncertainty to the user visually which is something I would fix in a future version.</p>
+    <p>What I took away from building this is that the hardest part of an environmental equity analysis is not finding the disparity — it is being specific about what is causing it and how confident you are in the numbers. I felt like having a concrete index score and a concrete finding (2.4x) made the project more useful than just saying pollution is worse in lower-income neighborhoods which everyone already knows. The point was to put a number on it and show exactly where on the map it happens.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Ethan Kalchik</span>
+    <span class="footer-sep">&mdash;</span>
+    <span class="footer-desc">GIS &amp; Spatial Analytics</span>
+    <div class="footer-links">
+      <a href="mailto:kalchikethan@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/ethan-kalchik-1a6619196/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/kalchikee" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <span class="footer-year">&copy; 2026</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

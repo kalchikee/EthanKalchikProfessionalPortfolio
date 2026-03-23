@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case study: The Lead Pipe Map — how I built an XGBoost model to predict Chicago properties with lead service lines.">
+  <meta property="og:title" content="Case Study: The Lead Pipe Map — Ethan Kalchik">
+  <meta property="og:image" content="https://kalchikee.github.io/EthanKalchikProfessionalPortfolio/assets/img/LeadPipe.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Case Study: The Lead Pipe Map — Ethan Kalchik</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">EK</a>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html">Visual Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://www.linkedin.com/in/ethan-kalchik-1a6619196/" target="_blank" rel="noopener" title="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://github.com/kalchikee" target="_blank" rel="noopener" title="GitHub"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+  </div>
+</nav>
+
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <p class="case-breadcrumb"><a href="index.html">Home</a> / <a href="portfolio.html">Portfolio</a> / Case Study</p>
+    <div class="tags" style="margin-bottom:16px;">
+      <span class="tag t-data">XGBoost</span>
+      <span class="tag t-stats">0.87 AUC-ROC</span>
+      <span class="tag t-gis">Public Health</span>
+      <span class="tag t-web">Chicago</span>
+    </div>
+    <h1>The Lead Pipe Map</h1>
+    <p>A machine learning model that predicts which Chicago properties are likely connected to the water main by a lead service line — to help the city prioritize which pipes to replace first.</p>
+    <div class="case-hero-actions">
+      <a href="https://kalchikee.github.io/lead-pipe-map/" class="btn btn-primary" target="_blank" rel="noopener">Live Project ↗</a>
+      <a href="index.html#projects" class="btn btn-secondary">← Back to Portfolio</a>
+    </div>
+  </div>
+</div>
+
+<img src="assets/img/LeadPipe.png" alt="The Lead Pipe Map" style="width:100%; max-height:420px; object-fit:cover; border-bottom:1px solid var(--border);">
+
+<div class="case-body">
+
+  <div class="case-section">
+    <h2>The Problem</h2>
+    <p>When I started this project I was thinking about the lead pipe replacement program that Chicago has been working on and realized that the city has a serious data problem. Chicago is estimated to have somewhere between 400,000 and 800,000 properties still connected to the water main by a lead service line and the reason the range is so wide is because the city does not actually know which properties have them. Lead exposure causes irreversible neurological damage especially in children under six and the reason that matters for this project is that you cannot fix the problem if you do not know where to look first.</p>
+    <p>The city has records for some known lead service lines but coverage is incomplete and inconsistent across neighborhoods. What I wanted to figure out was whether property characteristics that the city already has on file — things like construction year, building type, and assessed value — could be used to predict which properties are most likely to still have a lead line so that inspectors and replacement crews could be sent to the right places first.</p>
+  </div>
+
+  <div class="case-section">
+    <h2>Data Sources</h2>
+    <table class="data-table">
+      <thead><tr><th>Dataset</th><th>Source</th><th>What It Contributes</th></tr></thead>
+      <tbody>
+        <tr><td>Property Assessment Records</td><td>Cook County Assessor</td><td>Building age, construction class, square footage, assessed value</td></tr>
+        <tr><td>Known Service Line Records</td><td>Chicago CDOT / CDWM</td><td>Ground-truth labels for confirmed lead and non-lead service lines</td></tr>
+        <tr><td>Water Main Age Data</td><td>Chicago Dept. of Water Management</td><td>Age and material of the adjacent water main by block</td></tr>
+        <tr><td>Census TIGER/Line</td><td>U.S. Census Bureau</td><td>Parcel-level spatial boundaries for map rendering</td></tr>
+        <tr><td>Chicago Open Data</td><td>City of Chicago Data Portal</td><td>Supplemental property attributes and permit history</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="case-section">
+    <h2>Methodology</h2>
+
+    <h3>1. Building the Training Dataset</h3>
+    <p>The first thing I did was join the Cook County Assessor records to the city's known service line records using parcel IDs and the reason I did that is because I needed labeled examples — properties where the city already knows whether the line is lead or not — to train the model on. I ended up with a labeled dataset of roughly 85,000 properties after filtering out records with missing critical fields.</p>
+
+    <h3>2. Feature Engineering</h3>
+    <p>The features I chose to include were construction year, property class code, building square footage, assessed value per square foot, number of building units, distance to the nearest confirmed lead water main, and water main age on the adjacent block. The reason I included construction year as a feature is because lead service lines were banned from new construction in 1986 so buildings built before that are much more likely to have them. Distance to a known lead main matters because utilities in the same era tended to use the same materials across a whole area.</p>
+
+    <h3>3. Model Selection</h3>
+    <p>I chose XGBoost for this and the reason I chose it over a simpler logistic regression is because the relationship between building age and lead probability is not linear — there is a sharp threshold around 1986 — and XGBoost handles those kinds of non-linear patterns much better. I also felt like it was important to be able to look at feature importance after training so I could verify that the model was learning from the right signals and not picking up on something spurious.</p>
+
+    <h3>4. Evaluation</h3>
+    <p>I split the data 80/20 for training and testing and used AUC-ROC as my primary evaluation metric and the reason I chose AUC-ROC instead of accuracy is because the classes are imbalanced — there are more non-lead properties than lead ones — and accuracy alone would be misleading. The model achieved 0.87 AUC-ROC on the held-out test set which I was happy with given that the features are all indirect proxies for the actual pipe material.</p>
+
+    <table class="data-table" style="margin-top:16px;">
+      <thead><tr><th>Feature</th><th>Importance Rank</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td>Construction Year</td><td>#1</td><td>Pre-1986 construction strongly predicts lead service line presence</td></tr>
+        <tr><td>Distance to Known Lead Main</td><td>#2</td><td>Utilities used consistent materials within service areas and eras</td></tr>
+        <tr><td>Water Main Age (Adjacent Block)</td><td>#3</td><td>Older mains correlate with older service line materials</td></tr>
+        <tr><td>Property Class Code</td><td>#4</td><td>Residential vs. commercial construction followed different plumbing codes</td></tr>
+        <tr><td>Assessed Value per Sq Ft</td><td>#5</td><td>Proxy for neighborhood age and renovation history</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="case-section">
+    <h2>Key Findings</h2>
+    <div class="finding-card">
+      <h4>Pre-1986 properties are 3.4x more likely to have lead lines</h4>
+      <p>When I looked at the model output I could see that construction year before 1986 was the single strongest predictor and that properties built before that threshold were 3.4 times more likely to receive a high-risk prediction than otherwise similar properties built after it.</p>
+    </div>
+    <div class="finding-card">
+      <h4>South and West Side show the highest predicted risk clusters</h4>
+      <p>When I mapped the predictions I could see that the highest-probability properties were concentrated on the South Side and West Side of Chicago and the reason that pattern makes sense is because those neighborhoods have older housing stock and older water infrastructure compared to areas that were developed later.</p>
+    </div>
+    <div class="finding-card">
+      <h4>Model correctly flags 87% of known lead lines in the test set</h4>
+      <p>On the held-out test data the model correctly identified 87% of confirmed lead service line properties as high-risk. The reason this matters practically is that if the city used this model to prioritize inspections it would find real lead lines at a much higher rate than random or address-by-address canvassing.</p>
+    </div>
+    <div class="finding-card">
+      <h4>~112,000 unverified properties predicted high-risk</h4>
+      <p>When I applied the model to all Chicago properties without a confirmed service line status I found approximately 112,000 properties receiving a high-risk score and those are the properties I think should be prioritized for physical inspection and testing first.</p>
+    </div>
+  </div>
+
+  <div class="case-section">
+    <h2>Technical Stack</h2>
+    <table class="data-table">
+      <thead><tr><th>Layer</th><th>Technology</th></tr></thead>
+      <tbody>
+        <tr><td>Predictive model</td><td>XGBoost (Python), scikit-learn for preprocessing and evaluation</td></tr>
+        <tr><td>Data wrangling</td><td>Python (pandas, geopandas, NumPy)</td></tr>
+        <tr><td>Spatial join &amp; export</td><td>GeoPandas — parcel join, GeoJSON export</td></tr>
+        <tr><td>Interactive map</td><td>Leaflet.js with choropleth and point layers</td></tr>
+        <tr><td>UI &amp; filtering</td><td>Vanilla JavaScript, custom risk-tier controls</td></tr>
+        <tr><td>Hosting</td><td>GitHub Pages</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="case-section">
+    <h2>Reflections</h2>
+    <p>The biggest limitation I want to be honest about is that this model is predicting probability based on indirect signals and not directly measuring the pipe material. The reason that matters is that a property with a pre-1986 construction date that scores high-risk might still have had its service line replaced privately and the model has no way of knowing that without access to permit records or replacement logs. A stronger version of this would incorporate building permit data to flag properties where plumbing work has been done after 1986.</p>
+    <p>If I were to extend this project I would want to work with the city to validate predictions against a random sample of physical inspections so I could measure real-world precision at different probability thresholds. I would also look into adding soil corrosivity data because more corrosive soil accelerates pipe degradation and that could help explain cases where newer pipes have already failed.</p>
+    <p>What I took away from building this is that machine learning is most useful in a public health context when it is being used to prioritize where to look rather than to replace actual inspection. I feel like that framing is important and I tried to make it clear in the application itself.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Ethan Kalchik</span>
+    <span class="footer-sep">&mdash;</span>
+    <span class="footer-desc">GIS &amp; Spatial Analytics</span>
+    <div class="footer-links">
+      <a href="mailto:kalchikethan@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/ethan-kalchik-1a6619196/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/kalchikee" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <span class="footer-year">&copy; 2026</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
