@@ -47,6 +47,113 @@
 </div>
 
 <!-- ── PROJECTS ──────────────────────────────────────────────────────────── -->
+<div class="section-wrap" id="featured">
+  <div class="section-header">
+    <span class="section-label">Deep Dives</span>
+    <h2>Case Studies</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="featured-grid">
+
+    <div class="featured-card">
+      <div class="featured-img-wrap">
+        <img src="assets/img/Power Grid Fragility.png" alt="Power Grid Fragility">
+      </div>
+      <div class="featured-body">
+        <div class="tags">
+          <span class="tag t-web">Leaflet</span>
+          <span class="tag t-gis">EIA / FEMA NRI</span>
+          <span class="tag t-stats">Risk Index</span>
+        </div>
+        <h3>Power Grid Fragility &mdash; Blackout Vulnerability Index</h3>
+        <p>Nationwide composite risk model across all 3,144 US counties, combining grid reliability metrics, weather hazard exposure, elderly population share, and poverty rate into a single weighted vulnerability index.</p>
+        <div class="featured-meta">
+          <div class="featured-meta-row"><strong>Data</strong> EIA-861/860 &middot; FEMA NRI v1.20 &middot; Census ACS &middot; EIA Outage Records</div>
+          <div class="featured-meta-row"><strong>Method</strong> 5-factor weighted composite: 30% Grid + 25% Hazard + 20% FEMA NRI + 15% Elderly + 10% Poverty</div>
+          <div class="featured-meta-row"><strong>Scale</strong> 3,144 counties &middot; 50 states &middot; 847 counties rated High or Very High risk</div>
+        </div>
+        <div class="featured-actions">
+          <a href="case-power-grid.html" class="btn btn-primary">Read Case Study</a>
+          <a href="https://kalchikee.github.io/power-grid-fragility/" class="btn btn-outline" target="_blank" rel="noopener">Live Project &#8599;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-card">
+      <div class="featured-img-wrap">
+        <img src="assets/img/PoliceDeserts.png" alt="Police Response Deserts">
+      </div>
+      <div class="featured-body">
+        <div class="tags">
+          <span class="tag t-web">Leaflet</span>
+          <span class="tag t-stats">OLS Regression</span>
+          <span class="tag t-data">ACS / TIGER</span>
+        </div>
+        <h3>Police Response Deserts &mdash; Detroit 911 Equity Analysis</h3>
+        <p>Spatial regression analysis testing whether police response times in Detroit correlate with neighborhood race and income, mapping the geography of delayed emergency response across 139 census tracts.</p>
+        <div class="featured-meta">
+          <div class="featured-meta-row"><strong>Data</strong> Detroit CAD 911 records &middot; Census ACS 2022 &middot; TIGER/Line boundaries</div>
+          <div class="featured-meta-row"><strong>Method</strong> OLS regression (response time ~ % non-white + median income) &middot; Spatial join to census tracts</div>
+          <div class="featured-meta-row"><strong>Finding</strong> Statistically significant response time disparities correlated with race and income</div>
+        </div>
+        <div class="featured-actions">
+          <a href="case-police-deserts.html" class="btn btn-primary">Read Case Study</a>
+          <a href="https://kalchikee.github.io/police-response-deserts/" class="btn btn-outline" target="_blank" rel="noopener">Live Project &#8599;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-card">
+      <div class="featured-img-wrap">
+        <img src="assets/img/LeadPipe.png" alt="The Lead Pipe Map">
+      </div>
+      <div class="featured-body">
+        <div class="tags">
+          <span class="tag t-data">XGBoost</span>
+          <span class="tag t-stats">0.87 AUC-ROC</span>
+          <span class="tag t-gis">Public Health</span>
+        </div>
+        <h3>The Lead Pipe Map &mdash; Chicago Lead Service Line Prediction</h3>
+        <p>XGBoost classification model predicting which of Chicago&rsquo;s ~800,000 unverified properties are likely connected by a lead service line, using Cook County Assessor records to prioritize infrastructure replacement.</p>
+        <div class="featured-meta">
+          <div class="featured-meta-row"><strong>Data</strong> Cook County Assessor &middot; Chicago CDOT &middot; Water main age records &middot; Census TIGER/Line</div>
+          <div class="featured-meta-row"><strong>Method</strong> XGBoost classification &middot; Top features: construction year, distance to known lead main, water main age</div>
+          <div class="featured-meta-row"><strong>Performance</strong> 0.87 AUC-ROC &middot; ~112,000 unverified properties flagged high-risk</div>
+        </div>
+        <div class="featured-actions">
+          <a href="case-lead-pipe.html" class="btn btn-primary">Read Case Study</a>
+          <a href="https://kalchikee.github.io/lead-pipe-map/" class="btn btn-outline" target="_blank" rel="noopener">Live Project &#8599;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-card">
+      <div class="featured-img-wrap">
+        <img src="assets/img/BreathingZone.png" alt="The Breathing Zone">
+      </div>
+      <div class="featured-body">
+        <div class="tags">
+          <span class="tag t-web">Leaflet</span>
+          <span class="tag t-stats">Environmental</span>
+          <span class="tag t-gis">EPA AQS / PurpleAir</span>
+        </div>
+        <h3>The Breathing Zone &mdash; School Bus Air Quality Equity</h3>
+        <p>Air quality exposure analysis across 25 LA school bus routes measuring PM2.5 and NO2 at 100m intervals, revealing students in low-income neighborhoods breathe 2.4x more polluted air on their way to school.</p>
+        <div class="featured-meta">
+          <div class="featured-meta-row"><strong>Data</strong> EPA AQS &middot; PurpleAir (corrected) &middot; Caltrans traffic counts &middot; NCES school locations &middot; Census ACS</div>
+          <div class="featured-meta-row"><strong>Method</strong> Inhalation Exposure Index &middot; PM2.5 50% + NO2 35% + traffic density 15% &middot; 100m interval sampling</div>
+          <div class="featured-meta-row"><strong>Finding</strong> 2.4x equity gap &middot; 8 routes exceed EPA annual PM2.5 standard &middot; Morning routes 23% worse</div>
+        </div>
+        <div class="featured-actions">
+          <a href="case-breathing-zone.html" class="btn btn-primary">Read Case Study</a>
+          <a href="https://kalchikee.github.io/breathing-zone/" class="btn btn-outline" target="_blank" rel="noopener">Live Project &#8599;</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <div class="section-wrap">
   <div class="section-header">
     <span class="section-label">All Projects</span>
@@ -99,27 +206,7 @@
         <span class="card-link">View project</span>
       </div>
     </a>
-
-
-
-    <a href="https://kalchikee.github.io/lead-pipe-map/" class="project-card" data-case="case-lead-pipe.html" data-tags="python environmental public-health" target="_blank" rel="noopener">
-      <div class="project-img-wrap">
-        <img src="assets/img/LeadPipe.png" alt="The Lead Pipe Map">
-      </div>
-      <div class="project-body">
-        <div class="tags">
-        <span class="tag t-data">XGBoost</span>
-        <span class="tag t-stats">Environmental</span>
-        <span class="tag t-gis">Public Health</span>
-        </div>
-        <h3>The Lead Pipe Map</h3>
-        <p>Machine learning tool predicting Chicago properties with lead service lines using Cook County Assessor data and an XGBoost model (0.87 AUC-ROC) to prioritize infrastructure replacement.</p>
-        <p class="card-stack">Data: Cook County Assessor, Chicago CDOT &middot; Method: XGBoost classification, 0.87 AUC-ROC &middot; Stack: Python, Leaflet</p>
-        <span class="card-link">View project</span>
-      </div>
-    </a>
-
-    <a href="https://kalchikee.github.io/insulin-desert/" class="project-card" data-tags="leaflet environmental public-health" target="_blank" rel="noopener">
+<a href="https://kalchikee.github.io/insulin-desert/" class="project-card" data-tags="leaflet environmental public-health" target="_blank" rel="noopener">
       <div class="project-img-wrap">
         <img src="assets/img/InsulinDesert.png" alt="The Insulin Desert">
       </div>
@@ -152,27 +239,7 @@
         <span class="card-link">View project</span>
       </div>
     </a>
-
-    <a href="https://kalchikee.github.io/breathing-zone/" class="project-card" data-case="case-breathing-zone.html" data-tags="leaflet environmental public-health" target="_blank" rel="noopener">
-      <div class="project-img-wrap">
-        <img src="assets/img/BreathingZone.png" alt="The Breathing Zone">
-      </div>
-      <div class="project-body">
-        <div class="tags">
-        <span class="tag t-web">Leaflet</span>
-        <span class="tag t-stats">Environmental</span>
-        <span class="tag t-gis">Public Health</span>
-        </div>
-        <h3>The Breathing Zone</h3>
-        <p>Analyzes air pollution exposure on 25 LA school bus routes using PM2.5 and NO2 sampled at 100m intervals, revealing a 2.4x equity gap between routes serving low-income areas versus others.</p>
-        <p class="card-stack">Data: EPA AQS, PurpleAir sensors, Caltrans, NCES &middot; Method: Inhalation Exposure Index, 100m interval sampling &middot; Stack: Leaflet</p>
-        <span class="card-link">View project</span>
-      </div>
-    </a>
-
-
-
-    <a href="https://kalchikee.github.io/dam-failure-explorer/" class="project-card" data-tags="leaflet safety" target="_blank" rel="noopener">
+<a href="https://kalchikee.github.io/dam-failure-explorer/" class="project-card" data-tags="leaflet safety" target="_blank" rel="noopener">
       <div class="project-img-wrap">
         <img src="assets/img/DamnFailure.png" alt="Dam Failure Inundation Explorer">
       </div>
