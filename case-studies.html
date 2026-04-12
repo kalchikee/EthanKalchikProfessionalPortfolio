@@ -51,12 +51,7 @@
           <span class="tag t-stats">Need Index</span>
         </div>
         <h3>Illinois Broadband Gap Analysis</h3>
-        <p>Interactive mapping platform identifying broadband service gaps across 3,263 Illinois census tracts, combining FCC coverage data with poverty and educational attainment into a customizable Need Index for infrastructure planners and grant writers.</p>
-        <div class="featured-meta">
-          <div class="featured-meta-row"><strong>Data</strong> FCC Broadband Data Collection &middot; ACS 5-Year 2024 &middot; Census TIGER/Line 2023</div>
-          <div class="featured-meta-row"><strong>Method</strong> Composite Need Index: 50% Coverage Gap + 30% Poverty + 20% Educational Attainment &middot; User-adjustable weights</div>
-          <div class="featured-meta-row"><strong>Scale</strong> 3,263 census tracts &middot; Statewide Illinois &middot; Fixed &amp; mobile broadband layers</div>
-        </div>
+        <p>FCC broadband data has a well-known flaw: it marks a census block as covered if even one address can get service. That overstates coverage significantly in rural and low-income areas. I built this to go beyond that number — combining real coverage gaps with poverty and educational attainment so planners can see where investment actually matters, not just where FCC says it's fine. Built across all 3,263 Illinois census tracts, with adjustable index weights.</p>
         <div class="featured-actions">
           <a href="case-il-broadband.html" class="btn btn-primary">Read Case Study</a>
           <a href="https://kalchikee.github.io/IL-Broadband/" class="btn btn-outline" target="_blank" rel="noopener">Live Project &#8599;</a>
@@ -75,12 +70,7 @@
           <span class="tag t-data">ACS / TIGER</span>
         </div>
         <h3>Police Response Deserts &mdash; Detroit 911 Equity Analysis</h3>
-        <p>Spatial regression analysis testing whether police response times in Detroit correlate with neighborhood race and income, mapping the geography of delayed emergency response across 139 census tracts.</p>
-        <div class="featured-meta">
-          <div class="featured-meta-row"><strong>Data</strong> Detroit CAD 911 records &middot; Census ACS 2022 &middot; TIGER/Line boundaries</div>
-          <div class="featured-meta-row"><strong>Method</strong> OLS regression (response time ~ % non-white + median income) &middot; Spatial join to census tracts</div>
-          <div class="featured-meta-row"><strong>Finding</strong> Statistically significant response time disparities correlated with race and income</div>
-        </div>
+        <p>I pulled Detroit CAD dispatch records and ran OLS regression across 139 census tracts to test a direct question: do police response times in Detroit correlate with neighborhood race and income? The answer was yes, significantly, on both variables. This maps where the delays are worst and what the neighborhoods look like.</p>
         <div class="featured-actions">
           <a href="case-police-deserts.html" class="btn btn-primary">Read Case Study</a>
           <a href="https://kalchikee.github.io/police-response-deserts/" class="btn btn-outline" target="_blank" rel="noopener">Live Project &#8599;</a>
@@ -99,12 +89,7 @@
           <span class="tag t-gis">Public Health</span>
         </div>
         <h3>The Lead Pipe Map &mdash; Chicago Lead Service Line Prediction</h3>
-        <p>XGBoost classification model predicting which of Chicago&rsquo;s ~800,000 unverified properties are likely connected by a lead service line, using Cook County Assessor records to prioritize infrastructure replacement.</p>
-        <div class="featured-meta">
-          <div class="featured-meta-row"><strong>Data</strong> Cook County Assessor &middot; Chicago CDOT &middot; Water main age records &middot; Census TIGER/Line</div>
-          <div class="featured-meta-row"><strong>Method</strong> XGBoost classification &middot; Top features: construction year, distance to known lead main, water main age</div>
-          <div class="featured-meta-row"><strong>Performance</strong> 0.87 AUC-ROC &middot; ~112,000 unverified properties flagged high-risk</div>
-        </div>
+        <p>Chicago has around 400,000 known lead service lines — and another 800,000 properties where the pipe material is just unverified. I trained an XGBoost classifier on Cook County Assessor records to predict which of those unknown properties are likely connected by lead, using construction year, proximity to known lead mains, and water main age as the top predictors. Ended up flagging about 112,000 high-risk properties at 0.87 AUC-ROC.</p>
         <div class="featured-actions">
           <a href="case-lead-pipe.html" class="btn btn-primary">Read Case Study</a>
           <a href="https://kalchikee.github.io/lead-pipe-map/" class="btn btn-outline" target="_blank" rel="noopener">Live Project &#8599;</a>
@@ -123,12 +108,7 @@
           <span class="tag t-stats">Risk Index</span>
         </div>
         <h3>Power Grid Fragility &mdash; Blackout Vulnerability Index</h3>
-        <p>Nationwide composite risk model across all 3,144 US counties, combining grid reliability metrics, weather hazard exposure, elderly population share, and poverty rate into a single weighted vulnerability index.</p>
-        <div class="featured-meta">
-          <div class="featured-meta-row"><strong>Data</strong> EIA-861/860 &middot; FEMA NRI v1.20 &middot; Census ACS &middot; EIA Outage Records</div>
-          <div class="featured-meta-row"><strong>Method</strong> 5-factor weighted composite: 30% Grid + 25% Hazard + 20% FEMA NRI + 15% Elderly + 10% Poverty</div>
-          <div class="featured-meta-row"><strong>Scale</strong> 3,144 counties &middot; 50 states &middot; 847 counties rated High or Very High risk</div>
-        </div>
+        <p>I wanted to know which US counties were genuinely at risk for extended blackouts — not just the ones with bad weather, but the ones where multiple risk factors stack up at once. I combined EIA grid reliability data, FEMA NRI hazard scores, outage frequency, elderly population share, and poverty rate into a weighted index across all 3,144 US counties. 847 came back high or very high risk.</p>
         <div class="featured-actions">
           <a href="case-power-grid.html" class="btn btn-primary">Read Case Study</a>
           <a href="https://kalchikee.github.io/power-grid-fragility/" class="btn btn-outline" target="_blank" rel="noopener">Live Project &#8599;</a>

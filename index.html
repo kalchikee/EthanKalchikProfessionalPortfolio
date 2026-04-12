@@ -228,12 +228,7 @@
           <span class="tag t-stats">Need Index</span>
         </div>
         <h3>Illinois Broadband Gap Analysis</h3>
-        <p>Interactive mapping platform identifying broadband service gaps across 3,263 Illinois census tracts, combining FCC coverage data with poverty and educational attainment into a customizable Need Index for infrastructure planners and grant writers.</p>
-        <div class="featured-meta">
-          <div class="featured-meta-row"><strong>Data</strong> FCC Broadband Data Collection &middot; ACS 5-Year 2024 &middot; Census TIGER/Line 2023</div>
-          <div class="featured-meta-row"><strong>Method</strong> Composite Need Index: 50% Coverage Gap + 30% Poverty + 20% Educational Attainment &middot; User-adjustable weights</div>
-          <div class="featured-meta-row"><strong>Scale</strong> 3,263 census tracts &middot; Statewide Illinois &middot; Fixed &amp; mobile broadband layers</div>
-        </div>
+        <p>FCC broadband data has a well-known flaw: it marks a census block as covered if even one address can get service. That overstates coverage significantly in rural and low-income areas. I built this to go beyond that number — combining real coverage gaps with poverty and educational attainment so planners can see where investment actually matters, not just where FCC says it's fine. Built across all 3,263 Illinois census tracts, with adjustable index weights.</p>
         <div class="featured-actions">
           <a href="case-il-broadband.html" class="btn btn-primary">Read Case Study</a>
           <a href="https://kalchikee.github.io/IL-Broadband/" class="btn btn-outline" target="_blank" rel="noopener">Live Project &#8599;</a>
@@ -252,12 +247,7 @@
           <span class="tag t-data">ACS / TIGER</span>
         </div>
         <h3>Police Response Deserts — Detroit 911 Equity Analysis</h3>
-        <p>Spatial regression analysis testing whether police response times in Detroit correlate with neighborhood race and income — mapping the geography of delayed emergency response across 139 census tracts.</p>
-        <div class="featured-meta">
-          <div class="featured-meta-row"><strong>Data</strong> Detroit CAD 911 records · Census ACS 2022 · TIGER/Line boundaries</div>
-          <div class="featured-meta-row"><strong>Method</strong> OLS regression (response time ~ % non-white + median income) · Spatial join to census tracts</div>
-          <div class="featured-meta-row"><strong>Finding</strong> Statistically significant response time disparities correlated with race and income</div>
-        </div>
+        <p>I pulled Detroit CAD dispatch records and ran OLS regression across 139 census tracts to test a direct question: do police response times in Detroit correlate with neighborhood race and income? The answer was yes, significantly, on both variables. This maps where the delays are worst and what the neighborhoods look like.</p>
         <div class="featured-actions">
           <a href="case-police-deserts.html" class="btn btn-primary">Read Case Study</a>
           <a href="https://kalchikee.github.io/police-response-deserts/" class="btn btn-outline" target="_blank" rel="noopener">Live Project ↗</a>
@@ -276,12 +266,7 @@
           <span class="tag t-gis">Public Health</span>
         </div>
         <h3>The Lead Pipe Map &mdash; Chicago Lead Service Line Prediction</h3>
-        <p>XGBoost classification model predicting which of Chicago&rsquo;s ~800,000 unverified properties are likely connected by a lead service line, using Cook County Assessor records to prioritize infrastructure replacement.</p>
-        <div class="featured-meta">
-          <div class="featured-meta-row"><strong>Data</strong> Cook County Assessor &middot; Chicago CDOT &middot; Water main age records &middot; Census TIGER/Line</div>
-          <div class="featured-meta-row"><strong>Method</strong> XGBoost classification &middot; Top features: construction year, distance to known lead main, water main age</div>
-          <div class="featured-meta-row"><strong>Performance</strong> 0.87 AUC-ROC &middot; ~112,000 unverified properties flagged high-risk</div>
-        </div>
+        <p>Chicago has around 400,000 known lead service lines — and another 800,000 properties where the pipe material is just unverified. I trained an XGBoost classifier on Cook County Assessor records to predict which of those unknown properties are likely connected by lead, using construction year, proximity to known lead mains, and water main age as the top predictors. Ended up flagging about 112,000 high-risk properties at 0.87 AUC-ROC.</p>
         <div class="featured-actions">
           <a href="case-lead-pipe.html" class="btn btn-primary">Read Case Study</a>
           <a href="https://kalchikee.github.io/lead-pipe-map/" class="btn btn-outline" target="_blank" rel="noopener">Live Project &#8599;</a>
@@ -300,12 +285,7 @@
           <span class="tag t-stats">Risk Index</span>
         </div>
         <h3>Power Grid Fragility — Blackout Vulnerability Index</h3>
-        <p>Nationwide composite risk model across all 3,144 US counties, combining grid reliability metrics, weather hazard exposure, elderly population share, and poverty rate into a single weighted vulnerability index.</p>
-        <div class="featured-meta">
-          <div class="featured-meta-row"><strong>Data</strong> EIA-861/860 · FEMA NRI v1.20 · Census ACS · EIA Outage Records</div>
-          <div class="featured-meta-row"><strong>Method</strong> 5-factor weighted composite: 30% Grid + 25% Hazard + 20% FEMA NRI + 15% Elderly + 10% Poverty</div>
-          <div class="featured-meta-row"><strong>Scale</strong> 3,144 counties · 50 states · 847 counties rated High or Very High risk</div>
-        </div>
+        <p>I wanted to know which US counties were genuinely at risk for extended blackouts — not just the ones with bad weather, but the ones where multiple risk factors stack up at once. I combined EIA grid reliability data, FEMA NRI hazard scores, outage frequency, elderly population share, and poverty rate into a weighted index across all 3,144 US counties. 847 came back high or very high risk.</p>
         <div class="featured-actions">
           <a href="case-power-grid.html" class="btn btn-primary">Read Case Study</a>
           <a href="https://kalchikee.github.io/power-grid-fragility/" class="btn btn-outline" target="_blank" rel="noopener">Live Project ↗</a>
@@ -449,8 +429,7 @@
             <span class="tag t-data">185k Records</span>
           </div>
           <h3>Crash Anatomy</h3>
-          <p>Interactive visualization of 185,000+ fatal US traffic collisions (2019–2023), filterable by year, crash type, road type, and location setting using NHTSA FARS data.</p>
-          <p class="card-stack">Data: NHTSA FARS 2019&#8211;2023 (185k records) &middot; Method: Density viz &amp; temporal filtering</p>
+          <p>185,000 fatal crashes from 2019 to 2023, all from NHTSA FARS. I wanted something you could actually filter all at once — year, crash type, road type, location setting — because the patterns on rural two-lanes look nothing like what you see on interstates.</p>
       <span class="card-link">View project</span>
         </div>
       </a>
@@ -466,8 +445,7 @@
             <span class="tag t-stats">Risk Index</span>
           </div>
           <h3>Power Grid Fragility</h3>
-          <p>Nationwide blackout vulnerability index across 3,144 US counties, combining grid reliability, weather hazards, demographic risk, and FEMA NRI data into a weighted composite score.</p>
-          <p class="card-stack">Data: EIA-861/860, FEMA NRI v1.20, Census ACS &middot; Method: 5-factor weighted composite index</p>
+          <p>I wanted to know which counties were actually at risk for extended blackouts — not just the ones with bad weather, but the ones where grid reliability, storm exposure, elderly populations, and poverty all land on top of each other. Turned out to be 847 of them.</p>
       <span class="card-link">View project</span>
         </div>
       </a>
@@ -483,8 +461,7 @@
             <span class="tag t-data">ACS / TIGER</span>
           </div>
           <h3>Police Response Deserts</h3>
-          <p>Spatial analysis of Detroit 911 call data examining whether police response times correlate with neighborhood race and income using OLS regression.</p>
-          <p class="card-stack">Data: Detroit CAD 911 records, ACS, TIGER/Line &middot; Method: OLS regression, spatial join</p>
+          <p>I ran OLS regression on Detroit 911 dispatch records across 139 census tracts to test whether response time correlated with race and income. It did, significantly.</p>
       <span class="card-link">View project</span>
         </div>
       </a>
@@ -502,8 +479,7 @@
             <span class="tag t-data">NCES / Census</span>
           </div>
           <h3>US Schools — Highway Noise Exposure</h3>
-          <p>National analysis of ~67,000 public elementary schools modeled against WHO cognitive development thresholds, examining whether low-income communities face disproportionate highway noise impacts.</p>
-          <p class="card-stack">Data: NCES EDGE 2023, Census TIGER &middot; Method: ISO 9613-2 acoustic attenuation model</p>
+          <p>WHO has a chronic noise threshold that matters for kids' cognitive development. I modeled ~67,000 public elementary schools against it using highway proximity and ISO 9613-2 attenuation, then looked at which schools were over the line. The income pattern was pretty clear.</p>
       <span class="card-link">View project</span>
         </div>
       </a>
@@ -520,8 +496,7 @@
             <span class="tag t-stats">Accessibility</span>
           </div>
           <h3>The Commuter Gap</h3>
-          <p>Maps transit deserts and commuter accessibility disparities, revealing where low-income workers face the greatest mismatch between residential location and job centers.</p>
-          <p class="card-stack">Data: GTFS transit feeds, Census ACS &middot; Method: Network accessibility gap analysis</p>
+          <p>A lot of transit maps just show you where the bus stops are. I wanted to map the actual mismatch — where people without cars live relative to where jobs are — and see if that gap fell harder on low-income workers. It does, and the geography of it is pretty concentrated.</p>
       <span class="card-link">View project</span>
         </div>
       </a>
@@ -538,8 +513,7 @@
             <span class="tag t-stats">Urban Land Use</span>
           </div>
           <h3>Cemetery Sprawl — Chicago</h3>
-          <p>Examines urban land locked in perpetual non-use by mapping Chicago cemeteries against demographic patterns, transit access, and historical HOLC redlining boundaries to reveal deep spatial inequities.</p>
-          <p class="card-stack">Data: Cook County parcels, NLCD &middot; Method: Land consumption &amp; temporal change analysis</p>
+          <p>Chicago has a lot of land that doesn't house anyone and never will. I mapped cemetery footprints against HOLC redlining boundaries and demographic data to see where that permanently frozen land is concentrated. The overlap with formerly redlined neighborhoods wasn't subtle.</p>
       <span class="card-link">View project</span>
         </div>
       </a>
@@ -556,8 +530,7 @@
             <span class="tag t-map">TIGER/Line</span>
           </div>
           <h3>The Ambulance Paradox</h3>
-          <p>Maps EMS response time disparities across Dallas–Fort Worth to identify zones where response times exceed cardiac survival thresholds, overlaying heart disease prevalence to quantify mortality risk by geography.</p>
-          <p class="card-stack">Data: Chicago 911 CAD, Census ACS &middot; Method: Drive-time isochrones, OLS regression</p>
+          <p>I built isochrones from every EMS station in Dallas–Fort Worth to find which areas couldn't get a unit within 8 minutes — the cardiac arrest survival threshold. Then overlaid CDC heart disease prevalence data. The places with the worst coverage and the highest heart disease rates were the same places.</p>
       <span class="card-link">View project</span>
         </div>
       </a>
@@ -574,8 +547,7 @@
             <span class="tag t-web">AWS</span>
           </div>
           <h3>Chicago NDVI Monitor</h3>
-          <p>Urban vegetation intelligence platform tracking greenspace health across Chicago using Sentinel-2 satellite imagery, PostGIS, and AWS Cloud Optimized GeoTIFFs with time-series analysis and degradation flagging.</p>
-          <p class="card-stack">Data: Sentinel-2, Landsat-8 &middot; Method: NDVI time-series, spectral change detection</p>
+          <p>Automated pipeline pulling Sentinel-2 imagery, computing NDVI, and flagging significant vegetation changes across Chicago neighborhoods. Built on PostGIS and AWS. I wanted something that tracked greenspace loss over time rather than just snapshotting it.</p>
       <span class="card-link">View project</span>
         </div>
       </a>
@@ -591,8 +563,7 @@
             <span class="tag t-stats">Temporal</span>
           </div>
           <h3>Wildfire Risk &amp; Evacuation Planner</h3>
-          <p>Web mapping application for visualizing California wildfire perimeters, modeling fire risk by time of day, and generating dynamic evacuation routes.</p>
-          <p class="card-stack">Data: USFS, NIFC fire perimeters, NLCD &middot; Method: Multi-factor risk overlay analysis</p>
+          <p>California fire perimeters with risk modeling by time of day and dynamic evacuation routes. Wind and humidity mean the risk map at 2am looks different than it does at 2pm — most fire tools don't show you that variation.</p>
       <span class="card-link">View project</span>
         </div>
       </a>
@@ -608,8 +579,7 @@
             <span class="tag t-map">IDW</span>
           </div>
           <h3>Wisconsin Nitrate &amp; Cancer Analysis</h3>
-          <p>IDW interpolation and linear regression exploring links between agricultural nitrate contamination and cancer rates across Wisconsin census tracts.</p>
-          <p class="card-stack">Data: WGNHS well records, Census ACS &middot; Method: IDW interpolation, spatial regression</p>
+          <p>Graduate coursework project — IDW interpolation on Wisconsin groundwater well records to map nitrate contamination, then regression against county cancer rates. The underlying question about whether agricultural runoff shows up in health data is real even if this was for a class.</p>
       <span class="card-link">View project</span>
         </div>
       </a>
@@ -624,8 +594,7 @@
             <span class="tag t-map">Interactive Map</span>
           </div>
           <h3>Florida Gated Communities Map</h3>
-          <p>Interactive Leaflet map exploring gated communities across Florida with clustering, price-range filtering, and detailed community profiles.</p>
-          <p class="card-stack">Data: FL county parcel data, Census ACS &middot; Method: Gated community accessibility analysis</p>
+          <p>An earlier project — Leaflet map of gated communities across Florida with clustering and price filtering. More of a data exploration than an analysis, but it's a weird dataset to dig into.</p>
       <span class="card-link">View project</span>
         </div>
       </a>

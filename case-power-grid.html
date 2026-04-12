@@ -53,7 +53,7 @@
   <div class="case-section">
     <h2>The Problem</h2>
     <p>The 2021 Texas winter storm killed over 240 people and caused $195 billion in damage — largely because the ERCOT grid was unprepared for extreme cold. It was not an isolated event. Between 2000 and 2023, major outages affecting 50,000+ customers have increased by over 60%.</p>
-    <p>Yet there was no publicly accessible tool mapping <em>where</em> grid vulnerability combines with population vulnerability to create catastrophic risk. Utilities report reliability statistics. FEMA models natural hazard exposure. The Census tracks who is most dependent on electricity. But no one had combined these into a county-level composite risk index — until this project.</p>
+    <p>What I couldn't find was anything that combined those pieces. EIA publishes reliability data by utility. FEMA has hazard exposure by county. Census tracks the demographic side. But none of it was combined into a county-level picture of where all those risk factors land at once. That's what I built.</p>
   </div>
 
   <div class="case-section">
@@ -90,7 +90,7 @@
     <h2>Key Findings</h2>
     <div class="finding-card">
       <h4>847 counties rated High or Very High risk</h4>
-      <p>Concentrated in the Gulf Coast, Deep South, Appalachia, and Puerto Rico — regions where aging grid infrastructure meets frequent severe weather and high poverty rates.</p>
+      <p>The highest-risk counties cluster in the Gulf Coast, Deep South, Appalachia, and Puerto Rico. Those are the places where old infrastructure, frequent severe weather, and high poverty rates all end up at the same place on the same map.</p>
     </div>
     <div class="finding-card">
       <h4>ERCOT grid isolation amplifies Texas risk</h4>
@@ -98,7 +98,7 @@
     </div>
     <div class="finding-card">
       <h4>Elderly population is the strongest social amplifier</h4>
-      <p>Counties in the top 10% for elderly population share consistently score 12–18 points higher on BVI than demographically similar counties with younger populations, controlling for hazard exposure.</p>
+      <p>Counties with the highest elderly population shares were scoring 12–18 points higher on the index than otherwise similar counties. It makes sense — medical devices, heat and cold exposure, less ability to evacuate — but I didn't expect the gap to be that consistent across the country.</p>
     </div>
   </div>
 
@@ -118,8 +118,8 @@
 
   <div class="case-section">
     <h2>Reflections</h2>
-    <p>The biggest methodological challenge was reconciling EIA utility service territories with county boundaries — utilities often serve partial counties, requiring area-weighted aggregation of SAIDI/SAIFI metrics. Future improvements would incorporate smart meter penetration rates and transmission line age data from HIFLD for a more granular grid reliability score.</p>
-    <p>This project demonstrated that combining publicly available government datasets with a transparent, reproducible weighting methodology can produce actionable risk maps that individual datasets alone cannot provide.</p>
+    <p>The messiest part was reconciling EIA utility service territories with county boundaries — utilities don't follow county lines, so for counties served by multiple utilities I had to do area-weighted aggregation of the SAIDI/SAIFI reliability metrics. It's not perfect, but taking the worst-performing utility's score would have overstated risk in counties where only a small fraction of customers were on that utility.</p>
+    <p>If I were to extend this, I'd want to bring in smart meter penetration rates and transmission line age from HIFLD. SAIDI/SAIFI tells you how bad outages have been historically, but it doesn't tell you which infrastructure is about to fail. Those are related questions but they're not the same question.</p>
   </div>
 
 </div>
