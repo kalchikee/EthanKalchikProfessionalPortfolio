@@ -348,8 +348,7 @@
             <span class="tag t-gis">EPA AQS / PurpleAir</span>
           </div>
           <h3>The Breathing Zone</h3>
-          <p>Air quality exposure analysis across 25 LA school bus routes measuring PM2.5 and NO2 at 100m intervals, revealing students in low-income neighborhoods breathe 2.4x more polluted air on their way to school.</p>
-          <p class="card-stack">Data: EPA AQS, PurpleAir, Caltrans &middot; Method: Inhalation Exposure Index &middot; Stack: Leaflet, Chart.js, Python</p>
+          <p>I mapped air quality along 25 LA school bus routes at 100-meter intervals. Students on routes through South and East LA were breathing 2.4x more polluted air than students on other routes &mdash; and those routes ran almost entirely through low-income neighborhoods.</p>
           <span class="card-link">View project</span>
         </div>
       </a>
@@ -365,8 +364,8 @@
             <span class="tag t-stats">Need Index</span>
           </div>
           <h3>Illinois Broadband Gap Analysis</h3>
-          <p>Interactive mapping platform identifying broadband service gaps across 3,263 Illinois census tracts by combining FCC coverage data with Census demographics, featuring a customizable Need Index weighting tool for infrastructure planners and grant writers.</p>
-          <p class="card-stack">Data: FCC Broadband Data Collection, ACS 2024, Census TIGER/Line 2023 &middot; Method: Composite Need Index, coverage gap analysis &middot; Stack: Leaflet, Chart.js</p>
+          <p>FCC broadband data has a well-known problem: it marks a census block as covered if even one address can get service. I built this to go beyond that &mdash; combining coverage gaps with poverty and educational attainment so planners can see where investment actually matters most. The index weights are adjustable.</p>
+          <p class="card-stack">Data: FCC BDC, ACS 2024, TIGER/Line 2023 &middot; Stack: Leaflet, Chart.js</p>
           <span class="card-link">View project</span>
         </div>
       </a>
@@ -383,8 +382,8 @@
             <span class="tag t-gis">200 Ma</span>
           </div>
           <h3>Gulf of Mexico Plate Kinematic Reconstruction</h3>
-          <p>Interactive reconstruction of Gulf of Mexico basin formation over the past 200 million years, visualizing plate motion, spreading rates, subsidence modeling, and paleo-water depth analysis using the M&uuml;ller et al. (2019) community plate model.</p>
-          <p class="card-stack">Data: M&uuml;ller et al. (2019) plate model &middot; Method: GPlates kinematic reconstruction, subsidence modeling &middot; Stack: GPlates 2.4, pyGPlates, Leaflet, Plotly</p>
+          <p>A reconstruction of the Gulf of Mexico basin from 200 million years ago to present using the M&uuml;ller et al. plate model and GPlates. Covers plate motion, spreading rates, and subsidence &mdash; useful context for understanding why the GoM became one of the most productive hydrocarbon basins in the world.</p>
+          <p class="card-stack">Data: M&uuml;ller et al. (2019) &middot; Stack: GPlates 2.4, pyGPlates, Leaflet, Plotly</p>
           <span class="card-link">View project</span>
         </div>
       </a>
@@ -400,8 +399,8 @@
             <span class="tag t-stats">Real-Time</span>
           </div>
           <h3>Tectonic Monitoring Dashboard</h3>
-          <p>Real-time global earthquake monitoring dashboard with depth-based coloring, magnitude-scaled markers, 24-hour event counts, and magnitude distribution charts — auto-refreshing every five minutes from the USGS Earthquake Hazards Program API.</p>
-          <p class="card-stack">Data: USGS Earthquake Hazards Program API &middot; Method: Real-time feed parsing, depth/magnitude classification &middot; Stack: Leaflet, Plotly, JavaScript</p>
+          <p>Live global earthquake feed, auto-refreshes every 5 minutes from the USGS API. The depth coloring is the more interesting part &mdash; it shows you where plates are subducting in a way that magnitude alone doesn't.</p>
+          <p class="card-stack">Stack: Leaflet, Plotly &middot; Data: USGS Earthquake Hazards Program API</p>
           <span class="card-link">View project</span>
         </div>
       </a>
@@ -417,8 +416,8 @@
             <span class="tag t-data">NPPES</span>
           </div>
           <h3>The Insulin Desert</h3>
-          <p>Tracks pharmacy closures across Ohio (2019–2024) to identify medication access deserts and vulnerable populations, with drive-time analysis and a diabetes/elderly vulnerability index.</p>
-          <p class="card-stack">Data: NPPES pharmacy registry, ACS diabetes/elderly estimates &middot; Method: Drive-time analysis, vulnerability indexing &middot; Stack: Leaflet, Chart.js</p>
+          <p>Ohio lost hundreds of pharmacies between 2019 and 2024 and the closures weren't random. I built a drive-time model on NPPES pharmacy data to identify which communities ended up in real medication access deserts, weighted by diabetes prevalence and elderly population share.</p>
+          <p class="card-stack">Data: NPPES, ACS &middot; Stack: Leaflet, Chart.js</p>
           <span class="card-link">View project</span>
         </div>
       </a>
@@ -434,8 +433,7 @@
             <span class="tag t-data">Census / ACS</span>
           </div>
           <h3>The Voting Distance Gap</h3>
-          <p>Examines how polling place closures in Georgia (2020–2024) created disparate voter access burdens, measuring distance equity gaps by race and income using network-based calculations.</p>
-          <p class="card-stack">Data: OSM, Census 2020, ACS &middot; Method: Network-based distance calculations, demographic disparity analysis &middot; Stack: Leaflet</p>
+          <p>Georgia closed a lot of polling places between 2020 and 2024. I wanted to actually measure how far those closures pushed voters and whether the burden landed equally across race and income. It didn't.</p>
           <span class="card-link">View project</span>
         </div>
       </a>
@@ -451,8 +449,8 @@
             <span class="tag t-gis">Breach Modeling</span>
           </div>
           <h3>Dam Failure Inundation Explorer</h3>
-          <p>Interactive tool identifying 16,805 high-hazard US dams with downstream flood risk estimates using structural risk scoring and Froehlich breach discharge modeling across 92,445 dams.</p>
-          <p class="card-stack">Data: USACE National Inventory of Dams 2026 &middot; Method: Froehlich (1995) breach equation, 4-factor composite risk score &middot; Stack: Leaflet, GeoJSON</p>
+          <p>There are 92,445 dams in the USACE national inventory. 16,805 of them are rated high-hazard. I built a breach discharge model on top of that data to estimate downstream inundation risk &mdash; the goal was to make something you could actually use to look up any dam in the country.</p>
+          <p class="card-stack">Data: USACE NID 2026 &middot; Method: Froehlich (1995) breach equation &middot; Stack: Leaflet</p>
           <span class="card-link">View project</span>
         </div>
       </a>
