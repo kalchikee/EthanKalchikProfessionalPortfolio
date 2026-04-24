@@ -383,38 +383,6 @@
         </div>
       </a>
 
-      <a href="https://kalchikee.github.io/orbital-debris-threat-map/" class="project-card" data-tags="leaflet python" target="_blank" rel="noopener">
-        <div class="project-img-wrap">
-          <img src="assets/img/OrbitalDebris.png" alt="Orbital Debris Threat Map">
-        </div>
-        <div class="project-body">
-          <div class="tags">
-            <span class="tag t-web">D3 / WebGL</span>
-            <span class="tag t-data">CelesTrak</span>
-            <span class="tag t-stats">SGP4 Model</span>
-          </div>
-          <h3>Orbital Debris Threat Map</h3>
-          <p>Real-time dashboard tracking active satellites and orbital debris using SGP4/SDP4 propagation on CelesTrak TLE feeds. I built this to visualize where collision risk is actually concentrated — it's not evenly distributed across altitude, and some bands (especially 550–800 km) are getting genuinely crowded in a Kessler-cascade kind of way.</p>
-          <span class="card-link">View project</span>
-        </div>
-      </a>
-
-      <a href="https://kalchikee.github.io/seismic-sequence-animation/" class="project-card" data-tags="leaflet python safety" target="_blank" rel="noopener">
-        <div class="project-img-wrap">
-          <img src="assets/img/Ridgecrest.png" alt="Seismic Sequence Animation">
-        </div>
-        <div class="project-body">
-          <div class="tags">
-            <span class="tag t-web">Leaflet</span>
-            <span class="tag t-data">USGS ComCat</span>
-            <span class="tag t-stats">Seismology</span>
-          </div>
-          <h3>Seismic Sequence Animation</h3>
-          <p>The 2019 Ridgecrest M7.1 sequence activated around 50 km of fault strands that weren't on existing maps. I built an animation tool pulling USGS ComCat data that steps through the sequence temporally so you can actually watch the strands light up as the mainshock and aftershocks occurred.</p>
-          <span class="card-link">View project</span>
-        </div>
-      </a>
-
       <a href="https://kalchikee.github.io/dam-failure-explorer/" class="project-card" data-tags="leaflet safety" target="_blank" rel="noopener">
         <div class="project-img-wrap">
           <img src="assets/img/DamnFailure.png" alt="Dam Failure Inundation Explorer">
@@ -512,23 +480,6 @@
         </div>
       </a>
 
-      <a href="https://kalchikee.github.io/coastal-cities-sinking/" class="project-card" data-tags="leaflet climate" target="_blank" rel="noopener">
-        <div class="project-img-wrap">
-          <img src="assets/img/Subsidence Sentinel.png" alt="Subsidence Sentinel">
-        </div>
-        <div class="project-body">
-          <div class="tags">
-            <span class="tag t-gis">InSAR</span>
-            <span class="tag t-data">NOAA / FEMA</span>
-            <span class="tag t-stats">Sea Level Rise</span>
-            <span class="tag t-map">SRTM</span>
-          </div>
-          <h3>Subsidence Sentinel</h3>
-          <p>Houston-Galveston is sinking — some parts at over 25 mm per year. Layer sea level rise on top of that and you get relative SLR numbers most flood models aren't accounting for. I combined InSAR subsidence data with NOAA tide gauge projections to show where flood exposure is accelerating fastest.</p>
-          <span class="card-link">View project</span>
-        </div>
-      </a>
-
       <a href="https://kalchikee.github.io/blight-contagion/" class="project-card" data-tags="environmental urban" target="_blank" rel="noopener">
         <div class="project-img-wrap">
           <img src="assets/img/BlightContagion.png" alt="Blight Contagion">
@@ -562,23 +513,6 @@
         </div>
       </a>
 
-      <a href="https://kalchikee.github.io/dark-sky-erosion-tracker/" class="project-card" data-tags="environmental remote-sensing" target="_blank" rel="noopener">
-        <div class="project-img-wrap">
-          <img src="assets/img/DarkSkyErosion.png" alt="Dark Sky Erosion Tracker">
-        </div>
-        <div class="project-body">
-          <div class="tags">
-            <span class="tag t-gis">VIIRS DNB</span>
-            <span class="tag t-data">PAD-US</span>
-            <span class="tag t-stats">Time-Series</span>
-            <span class="tag t-map">NLCD</span>
-          </div>
-          <h3>Dark Sky Erosion Tracker</h3>
-          <p>VIIRS DNB has monthly composites of nighttime lights going back to 2012. I built a raster change detection pipeline across Colorado's Front Range to track which areas have gone from dark to lit over the last decade — specifically where that erosion hits wildlife corridors and federally-designated dark sky areas.</p>
-          <span class="card-link">View project</span>
-        </div>
-      </a>
-
       <a href="https://kalchikee.github.io/Storage-Tanks/" class="project-card" data-tags="leaflet environmental" target="_blank" rel="noopener">
         <div class="project-img-wrap">
           <img src="assets/img/Storagetanks.png" alt="Ghost Infrastructure">
@@ -592,23 +526,6 @@
           </div>
           <h3>Ghost Infrastructure — Storage Tank Risk</h3>
           <p>Harris County has thousands of underground storage tanks — some leaking, most forgotten. I pulled TCEQ registry data, layered on soil permeability and groundwater depth, and scored each site by its contamination risk to nearby drinking water wells. The "ghost" part is how many of these tanks people don't know are under them.</p>
-          <span class="card-link">View project</span>
-        </div>
-      </a>
-
-      <a href="https://kalchikee.github.io/siren-gap/" class="project-card" data-tags="leaflet safety" target="_blank" rel="noopener">
-        <div class="project-img-wrap">
-          <img src="assets/img/SirenGap.png" alt="The Siren Gap">
-        </div>
-        <div class="project-body">
-          <div class="tags">
-            <span class="tag t-web">Leaflet</span>
-            <span class="tag t-gis">NOAA</span>
-            <span class="tag t-stats">Sound Modeling</span>
-            <span class="tag t-data">Census</span>
-          </div>
-          <h3>The Siren Gap</h3>
-          <p>The Oklahoma City area has outdoor tornado sirens spread across the region, but I wanted to know if the sound actually reaches everyone. I ran acoustic propagation modeling on FCC siren locations with USGS elevation data to find dead zones — 2,236 km² of inadequate coverage affecting about 246,000 residents.</p>
           <span class="card-link">View project</span>
         </div>
       </a>
@@ -893,6 +810,89 @@
           <h3>Florida Gated Communities Map</h3>
           <p>An earlier project — Leaflet map of gated communities across Florida with clustering and price filtering. More of a data exploration than an analysis, but it's a weird dataset to dig into.</p>
       <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="https://kalchikee.github.io/orbital-debris-threat-map/" class="project-card" data-tags="leaflet python" target="_blank" rel="noopener">
+        <div class="project-img-wrap">
+          <img src="assets/img/OrbitalDebris.png" alt="Orbital Debris Threat Map">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-web">D3 / WebGL</span>
+            <span class="tag t-data">CelesTrak</span>
+            <span class="tag t-stats">SGP4 Model</span>
+          </div>
+          <h3>Orbital Debris Threat Map</h3>
+          <p>Real-time dashboard tracking active satellites and orbital debris using SGP4/SDP4 propagation on CelesTrak TLE feeds. I built this to visualize where collision risk is actually concentrated — it's not evenly distributed across altitude, and some bands (especially 550–800 km) are getting genuinely crowded in a Kessler-cascade kind of way.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="https://kalchikee.github.io/seismic-sequence-animation/" class="project-card" data-tags="leaflet python safety" target="_blank" rel="noopener">
+        <div class="project-img-wrap">
+          <img src="assets/img/Ridgecrest.png" alt="Seismic Sequence Animation">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-web">Leaflet</span>
+            <span class="tag t-data">USGS ComCat</span>
+            <span class="tag t-stats">Seismology</span>
+          </div>
+          <h3>Seismic Sequence Animation</h3>
+          <p>The 2019 Ridgecrest M7.1 sequence activated around 50 km of fault strands that weren't on existing maps. I built an animation tool pulling USGS ComCat data that steps through the sequence temporally so you can actually watch the strands light up as the mainshock and aftershocks occurred.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="https://kalchikee.github.io/coastal-cities-sinking/" class="project-card" data-tags="leaflet climate" target="_blank" rel="noopener">
+        <div class="project-img-wrap">
+          <img src="assets/img/Subsidence Sentinel.png" alt="Subsidence Sentinel">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-gis">InSAR</span>
+            <span class="tag t-data">NOAA / FEMA</span>
+            <span class="tag t-stats">Sea Level Rise</span>
+            <span class="tag t-map">SRTM</span>
+          </div>
+          <h3>Subsidence Sentinel</h3>
+          <p>Houston-Galveston is sinking — some parts at over 25 mm per year. Layer sea level rise on top of that and you get relative SLR numbers most flood models aren't accounting for. I combined InSAR subsidence data with NOAA tide gauge projections to show where flood exposure is accelerating fastest.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="https://kalchikee.github.io/dark-sky-erosion-tracker/" class="project-card" data-tags="environmental remote-sensing" target="_blank" rel="noopener">
+        <div class="project-img-wrap">
+          <img src="assets/img/DarkSkyErosion.png" alt="Dark Sky Erosion Tracker">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-gis">VIIRS DNB</span>
+            <span class="tag t-data">PAD-US</span>
+            <span class="tag t-stats">Time-Series</span>
+            <span class="tag t-map">NLCD</span>
+          </div>
+          <h3>Dark Sky Erosion Tracker</h3>
+          <p>VIIRS DNB has monthly composites of nighttime lights going back to 2012. I built a raster change detection pipeline across Colorado's Front Range to track which areas have gone from dark to lit over the last decade — specifically where that erosion hits wildlife corridors and federally-designated dark sky areas.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="https://kalchikee.github.io/siren-gap/" class="project-card" data-tags="leaflet safety" target="_blank" rel="noopener">
+        <div class="project-img-wrap">
+          <img src="assets/img/SirenGap.png" alt="The Siren Gap">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-web">Leaflet</span>
+            <span class="tag t-gis">NOAA</span>
+            <span class="tag t-stats">Sound Modeling</span>
+            <span class="tag t-data">Census</span>
+          </div>
+          <h3>The Siren Gap</h3>
+          <p>The Oklahoma City area has outdoor tornado sirens spread across the region, but I wanted to know if the sound actually reaches everyone. I ran acoustic propagation modeling on FCC siren locations with USGS elevation data to find dead zones — 2,236 km² of inadequate coverage affecting about 246,000 residents.</p>
+          <span class="card-link">View project</span>
         </div>
       </a>
 
