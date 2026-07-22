@@ -716,35 +716,6 @@ footer {
 .footer-links a:hover { color: var(--accent); }
 .footer-year { color: var(--text2); }
 
-/* ── OPEN TO WORK BADGE ─────────────────────────────────────────────── */
-.open-to-work {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(0,212,170,0.1);
-  border: 1px solid rgba(0,212,170,0.3);
-  color: var(--accent);
-  font-family: 'Space Mono', monospace;
-  font-size: 0.68em;
-  padding: 7px 16px;
-  border-radius: 20px;
-  letter-spacing: 0.05em;
-  margin-bottom: 20px;
-}
-.otw-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 6px var(--accent);
-  flex-shrink: 0;
-  animation: otw-pulse 2s infinite;
-}
-@keyframes otw-pulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 6px var(--accent); }
-  50%       { opacity: 0.45; box-shadow: 0 0 2px var(--accent); }
-}
-
 /* ── NAV SOCIAL ─────────────────────────────────────────────────────── */
 .nav-social {
   display: flex;
